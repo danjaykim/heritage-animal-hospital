@@ -57,3 +57,64 @@ class AppointmentQueries:
             raise AppointmentDatabaseError(
                 f"Error retrieving Appointment ID {id}: {str(e)}"
             )
+
+    def create_appointment(
+        self, appt: AppointmentRequest
+    ) -> AppointmentResponse:
+        try:
+            with pool.connection() as conn:
+                with conn.cursor(
+                    row_factory=class_row(AppointmentResponse)
+                ) as cur:
+                    result = cur.execute(
+                        """--sql
+                            INSERT INTO appointments (
+                                first_name,
+                                last_name,
+                                phone,
+                                email,
+                                pet_name,
+                                pet_type,
+                                reason,
+                                preferred_date,
+                                preferred_time,
+                                new_client
+                            )
+                            VALUES (
+                                %s,
+                                %s,
+                                %s,
+                                %s,
+                                %s,
+                                %s,
+                                %s,
+                                %s,
+                                %s,
+                                %s
+                            )
+                            RETURNING *;
+                        """,
+                        [
+                            appt.first_name,
+                            appt.last_name,
+                            appt.phone,
+                            appt.email,
+                            appt.pet_name,
+                            appt.pet_type,
+                            appt.reason,
+                            appt.preferred_date,
+                            appt.preferred_time,
+                            appt.new_client,
+                        ],
+                    )
+                    new_appointment = result.fetchone()
+                    if not new_appointment:
+                        raise AppointmentDatabaseError(
+                            f"Unable to create appointment for: {appt.pet_name}"
+                        )
+                    return new_appointment
+        except psycopg.Error as e:
+            print(e)
+            raise AppointmentDatabaseError(
+                f"Unable to create appointment for {appt.pet_name}: {str(e)}"
+            )

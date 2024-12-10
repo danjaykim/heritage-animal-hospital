@@ -38,3 +38,18 @@ def get_appointment(id: int, queries: AppointmentQueries = Depends()):
             status_code=500,
             detail=f"Routing error when attempting to retrieve appointment id {id}: {str(e)}",
         )
+
+
+@router.post("/", response_model=AppointmentResponse)
+def create_appointment(
+    new_appt: AppointmentRequest, queries: AppointmentQueries = Depends()
+):
+    try:
+        new_appointment = queries.create_appointment(new_appt)
+        return new_appointment
+    except AppointmentDatabaseError as e:
+        print(e)
+        raise HTTPException(
+            status_code=400,
+            detail=f"Routing error when attempting to create the appointment: {str(e)}",
+        )
