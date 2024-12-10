@@ -7,7 +7,7 @@ steps = [
                     id SERIAL PRIMARY KEY,
                     email VARCHAR(100) UNIQUE NOT NULL,
                     token VARCHAR(100) UNIQUE NOT NULL,
-                    expiration TIMESTAMP NOT NULL
+                    expiration TIMESTAMP NOT NULL,
                     used BOOLEAN DEFAULT FALSE
                 );
         """,

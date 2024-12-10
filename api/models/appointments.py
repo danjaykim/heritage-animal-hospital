@@ -1,5 +1,5 @@
 from pydantic import BaseModel, EmailStr
-from datetime import date
+from datetime import date, datetime
 from enum import Enum
 
 
@@ -39,4 +39,4 @@ class AppointmentResponse(AppointmentBase):
     """
 
     id: int
-    created_on: date
+    created_on: datetime

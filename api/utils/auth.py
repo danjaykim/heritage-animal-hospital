@@ -1,8 +1,8 @@
+import bcrypt
+
 """
 Helper functions for implementing authentication
 """
-
-import bcrypt
 
 
 def hash_password(plain_password: str, salt_rounds: int = 12) -> str:
