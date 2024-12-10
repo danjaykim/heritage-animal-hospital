@@ -165,10 +165,33 @@ class AppointmentQueries:
                     updated_appointment = result.fetchone()
                     if not updated_appointment:
                         raise AppointmentDatabaseError(
-                            f"Unable to update appointment for {appt.first_name} {appt.last_name}"
+                            f"Unable to update appointment for id: {id}"
                         )
                     return updated_appointment
         except psycopg.Error as e:
             raise AppointmentDatabaseError(
                 f"Unable to update appointment for {appt.first_name} {appt.last_name}: {str(e)}"
+            )
+
+    def delete_appointment(self, id: int) -> str:
+        try:
+            with pool.connection() as conn:
+                with conn.cursor() as cur:
+                    cur.execute(
+                        """--sql
+                            DELETE FROM appointments
+                            WHERE id = %s;
+                        """,
+                        [id],
+                    )
+                    if cur.rowcount == 0:
+                        raise AppointmentDatabaseError(
+                            f"Appointment id {id} not found in the database"
+                        )
+                    return (
+                        f"Appointment id: {id} has been successfully deleted"
+                    )
+        except psycopg.Error as e:
+            raise AppointmentDatabaseError(
+                f"Invalid appointment id {id}: {str(e)}"
             )

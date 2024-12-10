@@ -1,4 +1,5 @@
-from fastapi import APIRouter, Depends, HTTPException, Response
+from fastapi import APIRouter, Depends, HTTPException
+from fastapi.responses import JSONResponse
 from queries.appointment_queries import AppointmentQueries
 from models.appointments import (
     AppointmentRequest,
@@ -40,7 +41,7 @@ def get_appointment(id: int, queries: AppointmentQueries = Depends()):
         print(e)
         raise HTTPException(
             status_code=500,
-            detail=f"Routing error when attempting to retrieve appointment id {id}: {str(e)}",
+            detail=f"Routing error when attempting to retrieve appointment: {str(e)}",
         )
 
 
@@ -72,5 +73,23 @@ def update_appointment(
         print(e)
         raise HTTPException(
             status_code=400,
-            detail=f"Routing error when attempting to update the appointment id {id}: {str(e)}",
+            detail=f"Routing error when attempting to update the appointment: {str(e)}",
+        )
+
+
+@router.delete("/{id}", response_model=None)
+def delete_appointment(id: int, queries: AppointmentQueries = Depends()):
+    try:
+        queries.delete_appointment(id)
+        return JSONResponse(
+            content={
+                "message": f"Appointment id: {id} has been successfully deleted"
+            },
+            status_code=200,
+        )
+    except AppointmentDatabaseError as e:
+        print(e)
+        raise HTTPException(
+            status_code=400,
+            detail=f"Routing error when attempting to delete appointment: {str(e)}",
         )
