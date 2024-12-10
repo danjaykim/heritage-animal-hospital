@@ -3,7 +3,11 @@ import psycopg
 from typing import Optional
 from psycopg.rows import class_row
 from psycopg_pool import ConnectionPool
-from models.appointments import AppointmentRequest, AppointmentResponse
+from models.appointments import (
+    AppointmentRequest,
+    AppointmentResponse,
+    AppointmentUpdateRequest,
+)
 from utils.exceptions import DatabaseURLException, AppointmentDatabaseError
 
 
@@ -117,4 +121,54 @@ class AppointmentQueries:
             print(e)
             raise AppointmentDatabaseError(
                 f"Unable to create appointment for {appt.pet_name}: {str(e)}"
+            )
+
+    def update_appointment(
+        self, id: int, appt: AppointmentUpdateRequest
+    ) -> AppointmentResponse:
+        try:
+            with pool.connection() as conn:
+                with conn.cursor(
+                    row_factory=class_row(AppointmentResponse)
+                ) as cur:
+                    result = cur.execute(
+                        """--sql
+                            UPDATE appointments
+                            SET
+                                first_name = COALESCE(%s, first_name),
+                                last_name = COALESCE(%s, last_name),
+                                phone = COALESCE(%s, phone),
+                                email = COALESCE(%s, email),
+                                pet_name = COALESCE(%s, pet_name),
+                                pet_type = COALESCE(%s, pet_type),
+                                reason = COALESCE(%s, reason),
+                                preferred_date = COALESCE(%s, preferred_date),
+                                preferred_time = COALESCE(%s, preferred_time),
+                                new_client = COALESCE(%s, new_client)
+                            WHERE id = %s
+                            RETURNING *;
+                        """,
+                        [
+                            appt.first_name,
+                            appt.last_name,
+                            appt.phone,
+                            appt.email,
+                            appt.pet_name,
+                            appt.pet_type,
+                            appt.reason,
+                            appt.preferred_date,
+                            appt.preferred_time,
+                            appt.new_client,
+                            id,
+                        ],
+                    )
+                    updated_appointment = result.fetchone()
+                    if not updated_appointment:
+                        raise AppointmentDatabaseError(
+                            f"Unable to update appointment for {appt.first_name} {appt.last_name}"
+                        )
+                    return updated_appointment
+        except psycopg.Error as e:
+            raise AppointmentDatabaseError(
+                f"Unable to update appointment for {appt.first_name} {appt.last_name}: {str(e)}"
             )
