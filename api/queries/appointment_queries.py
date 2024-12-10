@@ -1,5 +1,6 @@
 import os
 import psycopg
+from typing import Optional
 from psycopg.rows import class_row
 from psycopg_pool import ConnectionPool
 from models.appointments import AppointmentRequest, AppointmentResponse
@@ -33,4 +34,26 @@ class AppointmentQueries:
         except psycopg.Error as e:
             raise AppointmentDatabaseError(
                 f"Error retrieving all appointments: {str(e)}"
+            )
+
+    def get_appointment(self, id: int) -> Optional[AppointmentResponse]:
+        try:
+            with pool.connection() as conn:
+                with conn.cursor(
+                    row_factory=class_row(AppointmentResponse)
+                ) as cur:
+                    result = cur.execute(
+                        """--sql
+                            SELECT * FROM appointments
+                            WHERE id = %s;
+                        """,
+                        [id],
+                    )
+                    appointment = result.fetchone()
+                    if not appointment:
+                        return None
+                    return appointment
+        except psycopg.Error as e:
+            raise AppointmentDatabaseError(
+                f"Error retrieving Appointment ID {id}: {str(e)}"
             )
