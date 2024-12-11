@@ -114,13 +114,13 @@ class AppointmentQueries:
                     new_appointment = result.fetchone()
                     if not new_appointment:
                         raise AppointmentDatabaseError(
-                            f"Unable to create appointment for: {appt.pet_name}"
+                            "Unable to create appointment"
                         )
                     return new_appointment
         except psycopg.Error as e:
             print(e)
             raise AppointmentDatabaseError(
-                f"Unable to create appointment for {appt.pet_name}: {str(e)}"
+                f"Unable to create appointment: {str(e)}"
             )
 
     def update_appointment(
@@ -165,12 +165,12 @@ class AppointmentQueries:
                     updated_appointment = result.fetchone()
                     if not updated_appointment:
                         raise AppointmentDatabaseError(
-                            f"Unable to update appointment for id: {id}"
+                            "Unable to update appointment"
                         )
                     return updated_appointment
         except psycopg.Error as e:
             raise AppointmentDatabaseError(
-                f"Unable to update appointment for {appt.first_name} {appt.last_name}: {str(e)}"
+                f"Unable to update appointment: {str(e)}"
             )
 
     def delete_appointment(self, id: int) -> str:

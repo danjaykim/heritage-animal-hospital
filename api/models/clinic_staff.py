@@ -12,10 +12,6 @@ class RoleType(str, Enum):
 
 
 class ClinicStaffBase(BaseModel):
-    """
-    Represents Clinic Staff
-    """
-
     email: EmailStr
     first_name: str
     last_name: str
@@ -24,35 +20,20 @@ class ClinicStaffBase(BaseModel):
 
 
 class ClinicStaffLoginRequest(BaseModel):
-    """
-    Represents a request to login a staff member
-    """
-
     email: EmailStr
     password: str
 
 
-class ClinicStaffRequest(ClinicStaffBase):
-    """
-    Represents a staff member POST (Admin creates staff member manually)
-    """
-
+class ClinicStaffDBModel(ClinicStaffBase):
+    id: int
     hashed_password: str
 
 
 class ClinicStaffResponse(ClinicStaffBase):
-    """
-    Represents a staff member GET
-    """
-
     id: int
     created_at: datetime
 
 
 class ClinicStaffRegisterRequest(ClinicStaffBase):
-    """
-    Represents a request to register a staff member with invite token (Creating new staff member via form)
-    """
-
     password: str
     token: str
