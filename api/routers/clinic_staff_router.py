@@ -26,3 +26,19 @@ def get_all_clinic_staff(queries: ClinicStaffQueries = Depends()):
             status_code=500,
             detail=f"Routing error when attempting to retrieve all clinic staff: {str(e)}",
         )
+
+
+@router.get("/{id}", response_model=ClinicStaffResponse)
+def get_clinic_staff(id: int, queries: ClinicStaffQueries = Depends()):
+    try:
+        clinic_staff = queries.get_clinic_staff(id)
+        if not clinic_staff:
+            raise HTTPException(
+                status_code=404, detail="Clinic staff member not found"
+            )
+        return clinic_staff
+    except ClinicStaffDataBaseError as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Routing error when attempting to retrieve clinic staff member: {str(e)}",
+        )

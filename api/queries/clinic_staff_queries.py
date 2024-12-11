@@ -23,7 +23,7 @@ pool = ConnectionPool(DATABASE_URL)
 
 
 class ClinicStaffQueries:
-    def get_all_clinic_staff(self) -> ClinicStaffResponse:
+    def get_all_clinic_staff(self) -> list[ClinicStaffResponse]:
         try:
             with pool.connection() as conn:
                 with conn.cursor(
@@ -39,4 +39,26 @@ class ClinicStaffQueries:
         except psycopg.Error as e:
             raise ClinicStaffDataBaseError(
                 f"Error retrieving all clinic staff information: {str(e)}"
+            )
+
+    def get_clinic_staff(self, id: int) -> Optional[ClinicStaffResponse]:
+        try:
+            with pool.connection() as conn:
+                with conn.cursor(
+                    row_factory=class_row(ClinicStaffResponse)
+                ) as cur:
+                    result = cur.execute(
+                        """--sql
+                            SELECT * FROM clinic_staff
+                            WHERE id = %s;
+                        """,
+                        [id],
+                    )
+                    clinic_staff = result.fetchone()
+                    if not clinic_staff:
+                        return None
+                    return clinic_staff
+        except psycopg.Error as e:
+            raise ClinicStaffDataBaseError(
+                f"Error retrieving clinic staff member with id: {id}: {str(e)}"
             )
