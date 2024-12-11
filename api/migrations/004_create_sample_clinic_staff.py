@@ -1,3 +1,6 @@
+# Note: This migration inserts sample, fake data for dev purposes only
+# Passwords are intentionally plain text for this specific development seed
+
 steps = [
     [
         # Seed clinic staff data

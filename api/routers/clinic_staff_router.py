@@ -29,9 +29,9 @@ def get_all_clinic_staff(queries: ClinicStaffQueries = Depends()):
 
 
 @router.get("/{id}", response_model=ClinicStaffResponse)
-def get_clinic_staff(id: int, queries: ClinicStaffQueries = Depends()):
+def get_clinic_staff_by_id(id: int, queries: ClinicStaffQueries = Depends()):
     try:
-        clinic_staff = queries.get_clinic_staff(id)
+        clinic_staff = queries.get_clinic_staff_by_id(id)
         if not clinic_staff:
             raise HTTPException(
                 status_code=404, detail="Clinic staff member not found"
