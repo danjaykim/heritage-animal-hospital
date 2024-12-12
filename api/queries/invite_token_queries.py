@@ -32,9 +32,23 @@ class InviteTokenQueries:
                 ) as cur:
                     result = cur.execute(
                         """--sql
-                            INSERT INTO invite_tokens
-                            VALUES (%s, %s, %s, %s)
-                            RETURNING email, token, expiration, used;
+                            INSERT INTO invite_tokens (
+                                email,
+                                token,
+                                expiration,
+                                used
+                            )
+                            VALUES (
+                                %s,
+                                %s,
+                                %s,
+                                %s
+                            )
+                            RETURNING
+                                email,
+                                token,
+                                expiration,
+                                used;
                         """,
                         [email, token, expiration_date, False],
                     )

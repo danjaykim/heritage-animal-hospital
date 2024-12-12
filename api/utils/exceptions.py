@@ -12,3 +12,7 @@ class ClinicStaffDatabaseError(Exception):
 
 class InviteTokenDatabaseError(Exception):
     pass
+
+
+class AdminDatabaseError(Exception):
+    pass

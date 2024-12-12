@@ -1,4 +1,5 @@
 import os
+import uuid
 import bcrypt
 import datetime
 from calendar import timegm
@@ -15,6 +16,13 @@ ALGORITHM = ALGORITHMS.HS256
 SIGNING_KEY = os.environ.get("SIGNING_KEY")
 if not SIGNING_KEY:
     raise ValueError("SIGNING_KEY environment variable is not set")
+
+
+def generate_token() -> str:
+    """
+    Generates a unique string token using UUID4
+    """
+    return str(uuid.uuid4())
 
 
 def hash_password(plain_password: str, salt_rounds: int = 12) -> str:

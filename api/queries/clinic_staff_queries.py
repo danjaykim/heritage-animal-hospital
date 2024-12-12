@@ -95,3 +95,58 @@ class ClinicStaffQueries:
             raise ClinicStaffDatabaseError(
                 f"Unable to retrieve clinic staff member: {str(e)}"
             )
+
+    def create_clinic_staff(
+        self, staff: ClinicStaffDBModel
+    ) -> ClinicStaffResponse:
+        try:
+            with pool.connection() as conn:
+                with conn.cursor(
+                    row_factory=class_row(ClinicStaffResponse)
+                ) as cur:
+                    result = cur.execute(
+                        """--sql
+                            INSERT INTO clinic_staff (
+                                email,
+                                first_name,
+                                last_name,
+                                phone,
+                                role,
+                                hashed_password
+                            )
+                            VALUES (
+                                %s,
+                                %s,
+                                %s,
+                                %s,
+                                %s,
+                                %s
+                            )
+                            RETURNING
+                                id,
+                                email,
+                                first_name,
+                                last_name,
+                                phone,
+                                role,
+                                created_at;
+                        """,
+                        [
+                            staff.email,
+                            staff.first_name,
+                            staff.last_name,
+                            staff.phone,
+                            staff.role,
+                            staff.hashed_password,
+                        ],
+                    )
+                    new_clinic_staff_member = cur.fetchone()
+                    if not result:
+                        return ClinicStaffDatabaseError(
+                            "Unable to create clinic staff member"
+                        )
+                    return new_clinic_staff_member
+        except psycopg.Error as e:
+            raise ClinicStaffDatabaseError(
+                f"Unable to create clinic staff member: {str(e)}"
+            )
