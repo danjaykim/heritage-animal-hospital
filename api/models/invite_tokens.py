@@ -1,5 +1,5 @@
 from pydantic import BaseModel, EmailStr
-from datetime import date
+from datetime import datetime
 
 
 class InviteTokenRequest(BaseModel):
@@ -17,5 +17,5 @@ class InviteTokenResponse(BaseModel):
 
     token: str
     email: EmailStr
-    expiration: date
+    expiration: datetime
     used: bool

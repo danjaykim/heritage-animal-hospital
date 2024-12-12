@@ -1,7 +1,12 @@
 import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers import appointment_router, clinic_staff_router
+from routers import (
+    appointment_router,
+    clinic_staff_router,
+    auth_router,
+    admin_router,
+)
 
 app = FastAPI()
 
@@ -13,5 +18,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(admin_router.router)
+app.include_router(auth_router.router)
 app.include_router(appointment_router.router)
 app.include_router(clinic_staff_router.router)

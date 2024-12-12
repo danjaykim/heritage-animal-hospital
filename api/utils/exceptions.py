@@ -6,5 +6,13 @@ class AppointmentDatabaseError(Exception):
     pass
 
 
-class ClinicStaffDataBaseError(Exception):
+class ClinicStaffDatabaseError(Exception):
+    pass
+
+
+class InviteTokenDatabaseError(Exception):
+    pass
+
+
+class AdminDatabaseError(Exception):
     pass
