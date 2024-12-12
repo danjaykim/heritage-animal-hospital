@@ -5,9 +5,7 @@ from pydantic import EmailStr
 from psycopg.rows import class_row
 from psycopg_pool import ConnectionPool
 from models.clinic_staff import (
-    ClinicStaffLoginRequest,
     ClinicStaffDBModel,
-    ClinicStaffRegisterRequest,
     ClinicStaffResponse,
 )
 from utils.exceptions import DatabaseURLException, ClinicStaffDatabaseError
@@ -81,7 +79,8 @@ class ClinicStaffQueries:
                                 last_name,
                                 phone,
                                 role,
-                                hashed_password
+                                hashed_password,
+                                created_at
                             FROM clinic_staff
                             WHERE email = %s;
                         """,
@@ -140,8 +139,8 @@ class ClinicStaffQueries:
                             staff.hashed_password,
                         ],
                     )
-                    new_clinic_staff_member = cur.fetchone()
-                    if not result:
+                    new_clinic_staff_member = result.fetchone()
+                    if not new_clinic_staff_member:
                         return ClinicStaffDatabaseError(
                             "Unable to create clinic staff member"
                         )

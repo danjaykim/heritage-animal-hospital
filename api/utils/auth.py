@@ -30,8 +30,9 @@ def hash_password(plain_password: str, salt_rounds: int = 12) -> str:
     Hashes the input password
     Default bcrypt salt rounds set at 12
     """
+    password_bytes = plain_password.encode()
     salt = bcrypt.gensalt(rounds=salt_rounds)
-    return bcrypt.hashpw(plain_password, salt).decode()
+    return bcrypt.hashpw(password_bytes, salt).decode()
 
 
 def verify_password(plain_password: str, hashed_password: bytes) -> bool:

@@ -1,5 +1,6 @@
 from pydantic import BaseModel, EmailStr
 from datetime import datetime
+from typing import Optional
 from enum import Enum
 
 
@@ -25,8 +26,9 @@ class ClinicStaffLoginRequest(BaseModel):
 
 
 class ClinicStaffDBModel(ClinicStaffBase):
-    id: int
+    id: Optional[int] = None
     hashed_password: str
+    created_at: Optional[datetime] = None
 
 
 class ClinicStaffResponse(ClinicStaffBase):
