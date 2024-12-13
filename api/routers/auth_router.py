@@ -16,6 +16,7 @@ from models.jwt import JWTStaffData
 from queries.clinic_staff_queries import ClinicStaffQueries
 from queries.invite_token_queries import InviteTokenQueries
 from utils.auth import (
+    validate_registered_password,
     verify_password,
     generate_jwt,
     try_get_jwt_user,
@@ -121,6 +122,8 @@ async def register(
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail="Invalid Role Selected",
             )
+
+        validate_registered_password(staff.password)
 
         hashed_password = hash_password(staff.password)
 
