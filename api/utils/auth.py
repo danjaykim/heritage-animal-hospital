@@ -78,13 +78,13 @@ async def generate_jwt(clinic_staff: ClinicStaffResponse) -> str:
     )
     jwt_data = JWTPayload(
         exp=exp,
-        sub=clinic_staff.id,
+        sub=str(clinic_staff.id),
         user=JWTStaffData(
-            id=clinic_staff.id,
+            id=str(clinic_staff.id),
             email=clinic_staff.email,
         ),
     )
     encoded_jwt = jwt.encode(
-        jwt_data.model_dump(), SIGNING_KEY, algorithm=ALGORITHM.HS256
+        jwt_data.model_dump(), SIGNING_KEY, algorithm=ALGORITHM
     )
     return encoded_jwt
