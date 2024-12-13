@@ -1,4 +1,5 @@
 import os
+import re
 import uuid
 import bcrypt
 import datetime
@@ -7,6 +8,7 @@ from fastapi import Cookie
 from jose import JWTError, jwt
 from jose.constants import ALGORITHMS
 from typing import Annotated, Optional
+from utils.exceptions import AuthException
 from models.jwt import JWTStaffData, JWTPayload
 from models.clinic_staff import ClinicStaffResponse
 
@@ -16,6 +18,27 @@ ALGORITHM = ALGORITHMS.HS256
 SIGNING_KEY = os.environ.get("SIGNING_KEY")
 if not SIGNING_KEY:
     raise ValueError("SIGNING_KEY environment variable is not set")
+
+
+def validate_registered_password(password: str) -> None:
+    """
+    Verifies the registering staff member's password passes all conditions
+    """
+    errors = []
+
+    if len(password) < 8:
+        errors.append("Password must be a minimum of 8 characters long")
+    if not re.search(r"\d", password):
+        errors.append("Password must contain at least one number")
+    if not re.search(r"[a-z]", password):
+        errors.append("Password must contain at least one lowercase letter")
+    if not re.search(r"[A-Z]", password):
+        errors.append("Password must contain at least one uppercase")
+    if not re.search(r"[!@#$%^&*]", password):
+        errors.append("Password must contain at least one special character")
+
+    if errors:
+        raise AuthException(", ".join(errors))
 
 
 def generate_token() -> str:
@@ -50,6 +73,9 @@ def verify_password(plain_password: str, hashed_password: bytes) -> bool:
 
 
 async def decode_jwt(token: str) -> Optional[JWTPayload]:
+    """
+    Decodes the JWT from a token string
+    """
     try:
         payload = jwt.decode(token, SIGNING_KEY, algorithms=[ALGORITHM])
         return JWTPayload(**payload)
@@ -61,6 +87,12 @@ async def decode_jwt(token: str) -> Optional[JWTPayload]:
 async def try_get_jwt_user(
     fast_api_token: Annotated[str | None, Cookie()] = None
 ) -> Optional[JWTStaffData]:
+    """
+    Checks the JWT token from the cookie and attempts to get
+    the user from the payload of the JWT
+
+    Can be dependency injected into a route
+    """
     if not fast_api_token:
         return
     payload = await decode_jwt(fast_api_token)
@@ -70,6 +102,9 @@ async def try_get_jwt_user(
 
 
 async def generate_jwt(clinic_staff: ClinicStaffResponse) -> str:
+    """
+    Generates a new JWT token with staff member's info
+    """
     exp = timegm(
         (
             datetime.datetime.now(datetime.timezone.utc)
