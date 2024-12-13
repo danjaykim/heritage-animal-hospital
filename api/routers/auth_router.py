@@ -12,16 +12,22 @@ from models.clinic_staff import (
     ClinicStaffRegisterRequest,
     ClinicStaffDBModel,
 )
+from models.jwt import JWTStaffData
 from queries.clinic_staff_queries import ClinicStaffQueries
 from queries.invite_token_queries import InviteTokenQueries
-from utils.auth import verify_password, generate_jwt, hash_password
+from utils.auth import (
+    verify_password,
+    generate_jwt,
+    try_get_jwt_user,
+    hash_password,
+)
 from datetime import datetime
 
 router = APIRouter(tags=["Authentication"], prefix="/api/auth")
 
 
 @router.post("/login", response_model=dict)
-def login(
+async def login(
     request: ClinicStaffLoginRequest,
     http_request: Request,
     response: Response,
@@ -52,7 +58,7 @@ def login(
             }
         )
 
-        token = generate_jwt(clinic_staff_response)
+        token = await generate_jwt(clinic_staff_response)
         secure = (
             False
             if http_request.headers.get("origin") == "localhost"
@@ -78,7 +84,7 @@ def login(
 
 
 @router.post("/register", response_model=dict)
-def register(
+async def register(
     staff: ClinicStaffRegisterRequest,
     request: Request,
     response: Response,
@@ -131,7 +137,7 @@ def register(
 
         token_queries.mark_token_used(staff.token)
 
-        jwt_token = generate_jwt(new_staff)
+        jwt_token = await generate_jwt(new_staff)
         secure = (
             False if request.headers.get("origin") == "localhost" else True
         )
@@ -152,3 +158,14 @@ def register(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail=f"Error retrieving request: {str(e)}",
         )
+
+
+@router.get("/authenticate", response_model=JWTStaffData)
+def authenticate(
+    clinic_staff_member: ClinicStaffResponse = Depends(try_get_jwt_user),
+):
+    if not clinic_staff_member:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, detail="Not logged in"
+        )
+    return clinic_staff_member
