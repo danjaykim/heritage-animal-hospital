@@ -169,3 +169,15 @@ def authenticate(
             status_code=status.HTTP_404_NOT_FOUND, detail="Not logged in"
         )
     return clinic_staff_member
+
+
+@router.delete("/logout", response_model=dict)
+def logout(request: Request, response: Response):
+    secure = False if request.headers.get("origin") == "localhost" else True
+    response.delete_cookie(
+        key="fast_api_token",
+        httponly=True,
+        samesite="lax",
+        secure=secure,
+    )
+    return {"message": "Sucessfully logged out"}
