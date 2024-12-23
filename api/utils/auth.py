@@ -117,6 +117,10 @@ async def generate_jwt(clinic_staff: ClinicStaffResponse) -> str:
         user=JWTStaffData(
             id=str(clinic_staff.id),
             email=clinic_staff.email,
+            first_name=clinic_staff.first_name,
+            last_name=clinic_staff.last_name,
+            phone=clinic_staff.phone,
+            role=clinic_staff.role,
         ),
     )
     encoded_jwt = jwt.encode(

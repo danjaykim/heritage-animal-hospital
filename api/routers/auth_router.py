@@ -22,6 +22,7 @@ from utils.auth import (
     try_get_jwt_user,
     hash_password,
 )
+from utils.exceptions import AuthException
 from datetime import datetime
 
 router = APIRouter(tags=["Authentication"], prefix="/api/auth")
@@ -156,6 +157,11 @@ async def register(
             "message": "Registration Successful",
             "new_staff_member": new_staff,
         }
+    except AuthException as auth_ex:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Invalid Password Format: {auth_ex}",
+        )
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
@@ -177,6 +183,10 @@ def authenticate(
 @router.delete("/logout", response_model=dict)
 def logout(request: Request, response: Response):
     secure = False if request.headers.get("origin") == "localhost" else True
+    if not request.cookies.get("fast_api_token"):
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, detail="Not logged in"
+        )
     response.delete_cookie(
         key="fast_api_token",
         httponly=True,

@@ -1,6 +1,3 @@
-from fastapi import HTTPException, status
-
-
 class DatabaseURLException(Exception):
     pass
 
@@ -22,8 +19,8 @@ class AdminDatabaseError(Exception):
 
 
 class AuthException(Exception):
-    @staticmethod
-    def invalid_password(detail: str = "Invalid Password Format"):
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST, detail=detail
-        )
+    def __init__(self, detail: str = "Invalid Password Format"):
+        self.detail = detail
+
+    def __str__(self):
+        return self.detail
