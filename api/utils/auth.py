@@ -29,7 +29,6 @@ def required_roles(roles: list) -> JWTStaffData:
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail="No logged in staff member",
             )
-        print(clinic_staff)
         if clinic_staff.role not in roles:
             raise HTTPException(
                 status_code=status.HTTP_403_FORBIDDEN,
@@ -114,10 +113,10 @@ async def try_get_jwt_user(
     Can be dependency injected into a route
     """
     if not fast_api_token:
-        return None
+        return
     payload = await decode_jwt(fast_api_token)
     if not payload:
-        return None
+        return
     return payload.user
 
 

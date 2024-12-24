@@ -6,14 +6,23 @@ from models.appointments import (
     AppointmentResponse,
     AppointmentUpdateRequest,
 )
+from models.jwt import JWTStaffData
+from utils.auth import try_get_jwt_user
 from utils.exceptions import AppointmentDatabaseError
 
 router = APIRouter(tags=["Appointments"], prefix="/api/appointments")
 
 
 @router.get("/", response_model=list[AppointmentResponse])
-def all_appointments(queries: AppointmentQueries = Depends()):
+def all_appointments(
+    queries: AppointmentQueries = Depends(),
+    clinic_staff: JWTStaffData = Depends(try_get_jwt_user),
+):
     try:
+        if not clinic_staff:
+            raise HTTPException(
+                status_code=401, detail="Not authorized to view appointments"
+            )
         appointments = queries.get_all_appointments()
         if not appointments:
             raise HTTPException(
@@ -29,8 +38,16 @@ def all_appointments(queries: AppointmentQueries = Depends()):
 
 
 @router.get("/{id}", response_model=AppointmentResponse)
-def get_appointment(id: int, queries: AppointmentQueries = Depends()):
+def get_appointment(
+    id: int,
+    queries: AppointmentQueries = Depends(),
+    clinic_staff: JWTStaffData = Depends(try_get_jwt_user),
+):
     try:
+        if not clinic_staff:
+            raise HTTPException(
+                status_code=401, detail="Not authorized to view appointment"
+            )
         appointment = queries.get_appointment(id)
         if not appointment:
             raise HTTPException(
@@ -65,8 +82,13 @@ def update_appointment(
     id: int,
     appt: AppointmentUpdateRequest,
     queries: AppointmentQueries = Depends(),
+    clinic_staff: JWTStaffData = Depends(try_get_jwt_user),
 ):
     try:
+        if not clinic_staff:
+            raise HTTPException(
+                status_code=401, detail="Not authorized to update appointments"
+            )
         updated_appointment = queries.update_appointment(id, appt)
         return updated_appointment
     except AppointmentDatabaseError as e:
@@ -78,8 +100,16 @@ def update_appointment(
 
 
 @router.delete("/{id}", response_model=None)
-def delete_appointment(id: int, queries: AppointmentQueries = Depends()):
+def delete_appointment(
+    id: int,
+    queries: AppointmentQueries = Depends(),
+    clinic_staff: JWTStaffData = Depends(try_get_jwt_user),
+):
     try:
+        if not clinic_staff:
+            raise HTTPException(
+                status_code=401, detail="Not authorized to delete appointments"
+            )
         queries.delete_appointment(id)
         return JSONResponse(
             content={
@@ -88,7 +118,6 @@ def delete_appointment(id: int, queries: AppointmentQueries = Depends()):
             status_code=200,
         )
     except AppointmentDatabaseError as e:
-        print(e)
         raise HTTPException(
             status_code=400,
             detail=f"Routing error when attempting to delete appointment: {str(e)}",

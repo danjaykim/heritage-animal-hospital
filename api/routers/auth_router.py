@@ -6,6 +6,7 @@ from fastapi import (
     HTTPException,
     status,
 )
+from typing import Optional
 from models.clinic_staff import (
     ClinicStaffLoginRequest,
     ClinicStaffResponse,
@@ -173,7 +174,7 @@ async def register(
 
 @router.get("/authenticate", response_model=JWTStaffData)
 def authenticate(
-    clinic_staff_member: ClinicStaffResponse = Depends(try_get_jwt_user),
+    clinic_staff_member: Optional[JWTStaffData] = Depends(try_get_jwt_user),
 ):
     if not clinic_staff_member:
         raise HTTPException(
