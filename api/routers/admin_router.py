@@ -1,8 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException
 from queries.invite_token_queries import InviteTokenQueries
 from models.invite_tokens import InviteTokenRequest, InviteTokenResponse
+from models.jwt import JWTStaffData
 from utils.exceptions import AdminDatabaseError
-from utils.auth import generate_token
+from utils.auth import generate_token, required_roles
 
 
 router = APIRouter(tags=["Admin"], prefix="/api/admin")
@@ -10,7 +11,9 @@ router = APIRouter(tags=["Admin"], prefix="/api/admin")
 
 @router.post("/create-invite", response_model=InviteTokenResponse)
 def create_invite_token(
-    request: InviteTokenRequest, queries: InviteTokenQueries = Depends()
+    request: InviteTokenRequest,
+    queries: InviteTokenQueries = Depends(),
+    clinic_staff: JWTStaffData = Depends(required_roles(["admin", "vet"])),
 ):
     token = generate_token()
     try:

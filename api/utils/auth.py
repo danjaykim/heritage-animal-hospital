@@ -4,7 +4,7 @@ import uuid
 import bcrypt
 import datetime
 from calendar import timegm
-from fastapi import Cookie
+from fastapi import Cookie, Depends, HTTPException, status
 from jose import JWTError, jwt
 from jose.constants import ALGORITHMS
 from typing import Annotated, Optional
@@ -18,6 +18,26 @@ ALGORITHM = ALGORITHMS.HS256
 SIGNING_KEY = os.environ.get("SIGNING_KEY")
 if not SIGNING_KEY:
     raise ValueError("SIGNING_KEY environment variable is not set")
+
+
+def required_roles(roles: list) -> JWTStaffData:
+    def check_role(
+        clinic_staff: JWTStaffData = Depends(try_get_jwt_user),
+    ) -> JWTStaffData:
+        if not clinic_staff:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="No logged in staff member",
+            )
+        print(clinic_staff)
+        if clinic_staff.role not in roles:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="Access to this resource is denied",
+            )
+        return clinic_staff
+
+    return check_role
 
 
 def validate_registered_password(password: str) -> None:
@@ -34,7 +54,7 @@ def validate_registered_password(password: str) -> None:
         errors.append("Password must contain at least one lowercase letter")
     if not re.search(r"[A-Z]", password):
         errors.append("Password must contain at least one uppercase")
-    if not re.search(r"[!@#$%^&*]", password):
+    if not re.search(r"[!@#$%^&*?]", password):
         errors.append("Password must contain at least one special character")
 
     if errors:
@@ -94,10 +114,10 @@ async def try_get_jwt_user(
     Can be dependency injected into a route
     """
     if not fast_api_token:
-        return
+        return None
     payload = await decode_jwt(fast_api_token)
     if not payload:
-        return
+        return None
     return payload.user
 
 

@@ -50,7 +50,7 @@ class InviteTokenQueries:
                                 expiration,
                                 used;
                         """,
-                        [email, token, expiration_date, False],
+                        [email.lower(), token, expiration_date, False],
                     )
                     token = result.fetchone()
                     if not token:

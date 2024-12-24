@@ -84,7 +84,7 @@ class ClinicStaffQueries:
                             FROM clinic_staff
                             WHERE email = %s;
                         """,
-                        [email],
+                        [email.lower()],
                     )
                     clinic_staff = result.fetchone()
                     if not clinic_staff:
@@ -131,7 +131,7 @@ class ClinicStaffQueries:
                                 created_at;
                         """,
                         [
-                            staff.email,
+                            staff.email.lower(),
                             staff.first_name,
                             staff.last_name,
                             staff.phone,

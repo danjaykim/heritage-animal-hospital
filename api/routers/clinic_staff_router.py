@@ -1,10 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from queries.clinic_staff_queries import ClinicStaffQueries
-from models.clinic_staff import (
-    ClinicStaffLoginRequest,
-    ClinicStaffRegisterRequest,
-    ClinicStaffResponse,
-)
+from models.clinic_staff import ClinicStaffResponse
 from utils.exceptions import ClinicStaffDatabaseError
 
 

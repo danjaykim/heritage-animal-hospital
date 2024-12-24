@@ -36,7 +36,9 @@ async def login(
     queries: ClinicStaffQueries = Depends(),
 ):
     try:
-        clinic_staff_member = queries.get_clinic_staff_by_email(request.email)
+        clinic_staff_member = queries.get_clinic_staff_by_email(
+            request.email.lower()
+        )
 
         if not clinic_staff_member:
             raise HTTPException(
@@ -113,7 +115,7 @@ async def register(
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail="Token is expired",
             )
-        if invite_token.email != staff.email:
+        if invite_token.email.lower() != staff.email.lower():
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail="Incorrect Email Address",
@@ -129,7 +131,7 @@ async def register(
         hashed_password = hash_password(staff.password)
 
         new_staff_model = ClinicStaffDBModel(
-            email=staff.email,
+            email=staff.email.lower(),
             first_name=staff.first_name,
             last_name=staff.last_name,
             phone=staff.phone,
