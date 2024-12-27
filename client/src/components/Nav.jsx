@@ -5,6 +5,7 @@ import NavLinks from './NavLinks'
 
 export default function Nav() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [navBottomBorderShadow, setNavBottomBorderShadow] = useState(false)
     const navRef = useRef(null)
 
     useEffect(() => {
@@ -15,11 +16,18 @@ export default function Nav() {
         document.addEventListener('mousedown', handleOutsideNavClick)
         return () =>
             document.removeEventListener('mousedown', handleOutsideNavClick)
-    })
+    }, [])
+
+    useEffect(() => {
+        const handleScroll = () => setNavBottomBorderShadow(scrollY > 100)
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
 
     const menuPulldown = {
         open: {
             y: 0,
+            // transform: 'translateY(0)',
             transition: {
                 type: 'spring',
                 stiffness: 250,
@@ -28,6 +36,7 @@ export default function Nav() {
         },
         close: {
             y: -400,
+            // transform: 'translateY(-100%)',
             transition: {
                 type: 'spring',
                 stiffness: 250,
@@ -37,9 +46,12 @@ export default function Nav() {
     }
 
     return (
-        <nav ref={navRef} className="sticky top-0 w-full z-50 bg-white">
+        <nav
+            ref={navRef}
+            className={`sticky top-0 w-full z-50 bg-white ${navBottomBorderShadow ? 'shadow-md' : ''}`}
+        >
             <div className="relative bg-white">
-                <div className="containers flex items-center justify-between py-4">
+                <div className="containers flex items-center justify-between py-3 lg:py-6">
                     {/* LOGO */}
                     <p>Heritage of NWA</p>
 
