@@ -1,11 +1,11 @@
 import { Outlet } from 'react-router-dom'
-import { useState } from 'react'
+import Nav from './components/Nav.jsx'
 import './index.css'
 
 export default function App() {
     return (
         <>
-            <h1>Heritage of NorthWest Arkansas</h1>
+            <Nav />
             <Outlet />
         </>
     )
