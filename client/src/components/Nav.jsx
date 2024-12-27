@@ -1,10 +1,21 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion } from 'motion/react'
 import Hamburger from 'hamburger-react'
 import NavLinks from './NavLinks'
 
 export default function Nav() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const navRef = useRef(null)
+
+    useEffect(() => {
+        const handleOutsideNavClick = (event) => {
+            if (navRef.current && !navRef.current.contains(event.target))
+                setIsMenuOpen(false)
+        }
+        document.addEventListener('mousedown', handleOutsideNavClick)
+        return () =>
+            document.removeEventListener('mousedown', handleOutsideNavClick)
+    })
 
     const menuPulldown = {
         open: {
@@ -26,7 +37,7 @@ export default function Nav() {
     }
 
     return (
-        <nav className="fixed w-full z-50 bg-white">
+        <nav ref={navRef} className="sticky top-0 w-full z-50 bg-white">
             <div className="relative bg-white">
                 <div className="containers flex items-center justify-between py-4">
                     {/* LOGO */}
