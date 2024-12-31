@@ -2,11 +2,11 @@ import { NavLink } from 'react-router-dom'
 
 export default function NavLinks({ className }) {
     const navLinks = [
-        { title: 'HOME', path: '/' },
-        { title: 'ABOUT US', path: '/' },
-        { title: 'SERVICES', path: '/' },
-        { title: 'RESOURCES', path: '/' },
-        { title: 'CONTACT', path: '/' },
+        { title: 'Home', path: '/' },
+        { title: 'About', path: '/' },
+        { title: 'Services', path: '/' },
+        { title: 'Resources', path: '/' },
+        { title: 'Contact', path: '/' },
     ]
 
     return (

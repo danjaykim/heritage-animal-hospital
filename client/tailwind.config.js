@@ -8,7 +8,17 @@ export default {
             lg: '1024px',
             xl: '1280px',
         },
-        extend: {},
+        extend: {
+            fontFamily: {
+                default: ['Default', 'sans-serif'],
+                champie: ['Champie', 'sans-serif'],
+                jost: ['Jost', 'sans-serif'],
+                cal: ['Cal Sans', 'sans-serif'],
+                gilland: ['Gilland', 'sans-serif'],
+                kastore: ['Kastore', 'sans-serif'],
+                nohemi: ['Nohemi', 'sans-serif'],
+            },
+        },
     },
     plugins: [],
 }

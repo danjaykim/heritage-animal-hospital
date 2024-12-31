@@ -2,12 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('assets/fonts/fonts.css');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    @apply font-jost;
+}
+
 .containers {
-    @apply w-[85%] md:w-[90%] lg:max-w-[1400px] mx-auto;
+    @apply w-[90%] lg:max-w-[1400px] mx-auto;
 }

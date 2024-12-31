@@ -1,0 +1,129 @@
+/* Default */
+
+@font-face {
+    font-family: 'Default';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/default.otf');
+}
+
+/* Champie */
+
+@font-face {
+    font-family: 'Champie';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/Champie-Font-Family/ChampieTrial-Regular-BF666b98b39ace4.ttf');
+}
+
+@font-face {
+    font-family: 'Champie';
+    font-weight: 800;
+    font-style: normal;
+    src: url('../fonts/Champie-Font-Family/ChampieTrial-ExtraBold-BF666b98b3a8f70.ttf');
+}
+
+/* Jost */
+
+@font-face {
+    font-family: 'Jost';
+    font-weight: 300;
+    font-style: normal;
+    src: url('../fonts/Jost/static/Jost-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Jost';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/Jost/static/Jost-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Jost';
+    font-weight: 500;
+    font-style: normal;
+    src: url('../fonts/Jost/static/Jost-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Jost';
+    font-weight: 600;
+    font-style: normal;
+    src: url('../fonts/Jost/static/Jost-Semibold.ttf');
+}
+
+@font-face {
+    font-family: 'Jost';
+    font-weight: 700;
+    font-style: normal;
+    src: url('../fonts/Jost/static/Jost-Bold.ttf');
+}
+
+/* MAYBES */
+
+@font-face {
+    font-family: 'Mona Sans';
+    font-weight: 600;
+    font-style: normal;
+    src: url('../fonts/MonaSans-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'Cal Sans';
+    font-weight: 600;
+    font-style: normal;
+    src: url('../fonts/CalSans-SemiBold.ttf');
+}
+
+/* Gilland */
+
+@font-face {
+    font-family: 'Gilland';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/gilland-font/Gilland-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Gilland';
+    font-weight: 700;
+    font-style: normal;
+    src: url('../fonts/gilland-font/Gilland-Bold.otf');
+}
+
+/* Kastore */
+
+@font-face {
+    font-family: 'Kastore';
+    font-weight: 700;
+    font-style: normal;
+    src: url('../fonts/kastore/Kastore-Bold.ttf');
+}
+
+/* Nohemi */
+
+@font-face {
+    font-family: 'Nohemi';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/nohemi/Nohemi-Regular-BF6438cc4d0e493.ttf');
+}
+@font-face {
+    font-family: 'Nohemi';
+    font-weight: 500;
+    font-style: normal;
+    src: url('../fonts/nohemi/Nohemi-Medium-BF6438cc5883899.ttf');
+}
+@font-face {
+    font-family: 'Nohemi';
+    font-weight: 600;
+    font-style: normal;
+    src: url('../fonts/nohemi/Nohemi-SemiBold-BF6438cc588a48a.ttf');
+}
+@font-face {
+    font-family: 'Nohemi';
+    font-weight: 700;
+    font-style: normal;
+    src: url('../fonts/nohemi/Nohemi-Bold-BF6438cc587b5b5.ttf');
+}
