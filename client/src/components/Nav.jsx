@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'motion/react'
 import Hamburger from 'hamburger-react'
 import NavLinks from './NavLinks'
@@ -54,9 +55,23 @@ export default function Nav() {
             <div className="relative py-1 bg-white">
                 <div className="containers flex items-center justify-between">
                     {/* LOGO */}
-                    <img src={logo} alt="Heritage Logo" className="w-[75px]" />
+                    <Link to="/" className="flex items-center gap-1">
+                        <img
+                            src={logo}
+                            alt="Heritage Logo"
+                            className="w-[70px]"
+                        />
+                        <div className="hidden md:flex md:flex-col md:mt-3">
+                            <span className="md:text-4xl font-medium">
+                                HERITAGE
+                            </span>
+                            <span className="text-[.95rem] tracking-wide -mt-2">
+                                Animal Hospital of NWA
+                            </span>
+                        </div>
+                    </Link>
 
-                    {/* HAMBURGER ICON */}
+                    {/* HAMBURGER ICON (MOBILE ONLY) */}
                     <div className="lg:hidden">
                         <Hamburger
                             toggled={isMenuOpen}

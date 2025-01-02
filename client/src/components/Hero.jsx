@@ -5,7 +5,7 @@ export default function Hero() {
     return (
         <main
             className="relative overflow-hidden flex flex-col justify-between"
-            style={{ height: `calc(100vh - 70px)` }}
+            style={{ height: `calc(100vh - 72px)` }}
         >
             <div className="hero-words w-[90%] lg:max-w-[1400px] left-1/2 transform -translate-x-1/2 absolute flex flex-col justify-center mt-8 lg:mt-14">
                 <div className="mobile-content text-[#405764] md:hidden">
