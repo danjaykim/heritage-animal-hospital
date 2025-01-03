@@ -12,12 +12,14 @@ export default function Hero() {
                     Delivering Exceptional Veterinary Care with Compassion,
                     Integrity, and Commitment{' '}
                     <span className="hidden lg:inline">
-                        to the grow the human animal bond
+                        to Grow the Human-Animal Bond
                     </span>
                 </h1>
-                <p className="hidden md:block md:w-[75%] lg:w-[35%] md:text-[#1A2954] md:text-lg">
-                    Proudly serving expert care for small animals and equine
-                    throughout Northwest Arkansas and beyond
+                <p className="hidden md:block md:w-[75%] lg:w-[35%] font-light md:text-[#1A2954] md:text-2xl">
+                    Proudly serving expert care for{' '}
+                    <span className="font-bold">small animals</span> and{' '}
+                    <span className="font-bold">equine</span> throughout
+                    Northwest Arkansas and beyond
                 </p>
                 <HeroButton to="/test">
                     <div className="flex items-center gap-2">

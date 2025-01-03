@@ -1,29 +1,13 @@
-/* Default */
+/* Cal Sans (Headings) */
 
 @font-face {
-    font-family: 'Default';
-    font-weight: 400;
+    font-family: 'Cal Sans';
+    font-weight: 600;
     font-style: normal;
-    src: url('../fonts/default.otf');
+    src: url('../fonts/cal_sans/fonts/otf/CalSans-SemiBold.otf');
 }
 
-/* Champie */
-
-@font-face {
-    font-family: 'Champie';
-    font-weight: 400;
-    font-style: normal;
-    src: url('../fonts/Champie-Font-Family/ChampieTrial-Regular-BF666b98b39ace4.ttf');
-}
-
-@font-face {
-    font-family: 'Champie';
-    font-weight: 800;
-    font-style: normal;
-    src: url('../fonts/Champie-Font-Family/ChampieTrial-ExtraBold-BF666b98b3a8f70.ttf');
-}
-
-/* Jost */
+/* Jost (Logo Font) */
 
 @font-face {
     font-family: 'Jost';
@@ -60,70 +44,29 @@
     src: url('../fonts/Jost/static/Jost-Bold.ttf');
 }
 
-/* MAYBES */
+/* Zain (Content) */
 
 @font-face {
-    font-family: 'Mona Sans';
-    font-weight: 600;
-    font-style: normal;
-    src: url('../fonts/MonaSans-SemiBold.ttf');
+    font-family: 'Zain';
+    font-weight: 200;
+    font-display: swap;
+    src: url('../fonts/zain/Fonts/TTF/Zain-ExtraLight.ttf');
 }
-
 @font-face {
-    font-family: 'Cal Sans';
-    font-weight: 600;
-    font-style: normal;
-    src: url('../fonts/CalSans-SemiBold.ttf');
+    font-family: 'Zain';
+    font-weight: 300;
+    font-display: swap;
+    src: url('../fonts/zain/Fonts/TTF/Zain-Light.ttf');
 }
-
-/* Gilland */
-
 @font-face {
-    font-family: 'Gilland';
+    font-family: 'Zain';
     font-weight: 400;
-    font-style: normal;
-    src: url('../fonts/gilland-font/Gilland-Regular.otf');
-}
-
-@font-face {
-    font-family: 'Gilland';
-    font-weight: 700;
-    font-style: normal;
-    src: url('../fonts/gilland-font/Gilland-Bold.otf');
-}
-
-/* Kastore */
-
-@font-face {
-    font-family: 'Kastore';
-    font-weight: 700;
-    font-style: normal;
-    src: url('../fonts/kastore/Kastore-Bold.ttf');
-}
-
-/* Nohemi */
-
-@font-face {
-    font-family: 'Nohemi';
-    font-weight: 400;
-    font-style: normal;
-    src: url('../fonts/nohemi/Nohemi-Regular-BF6438cc4d0e493.ttf');
+    font-display: swap;
+    src: url('../fonts/zain/Fonts/TTF/Zain-Regular.ttf');
 }
 @font-face {
-    font-family: 'Nohemi';
-    font-weight: 500;
-    font-style: normal;
-    src: url('../fonts/nohemi/Nohemi-Medium-BF6438cc5883899.ttf');
-}
-@font-face {
-    font-family: 'Nohemi';
+    font-family: 'Zain';
     font-weight: 600;
-    font-style: normal;
-    src: url('../fonts/nohemi/Nohemi-SemiBold-BF6438cc588a48a.ttf');
-}
-@font-face {
-    font-family: 'Nohemi';
-    font-weight: 700;
-    font-style: normal;
-    src: url('../fonts/nohemi/Nohemi-Bold-BF6438cc587b5b5.ttf');
+    font-display: swap;
+    src: url('../fonts/zain/Fonts/TTF/Zain-Bold.ttf');
 }

@@ -55,13 +55,13 @@ export default function Nav() {
             <div className="relative py-2 bg-white">
                 <div className="containers flex items-center justify-between">
                     {/* LOGO */}
-                    <Link to="/" className="flex gap-1">
+                    <Link to="/" className="flex gap-1 font-jost">
                         <img
                             src={logo}
                             alt="Heritage Logo"
                             className="w-[60px] md:w-[70px]"
                         />
-                        <div className="flex flex-col justify-center mt-2 md:mt-3">
+                        <div className="flex flex-col justify-center -mb-2 md:-mb-3">
                             <span className="text-xl md:text-4xl font-medium">
                                 HERITAGE
                             </span>
@@ -85,7 +85,7 @@ export default function Nav() {
                     </div>
 
                     {/* DESKTOP NAV MENU/LINKS */}
-                    <NavLinks className="hidden lg:flex lg:gap-10 text-[#5A5C50] text-sm font-medium" />
+                    <NavLinks className="hidden lg:flex lg:gap-10 font-medium text-[#5A5C50] text-[1.2rem]" />
                 </div>
 
                 {/* MOBILE NAV MENU/LINKS OPEN */}
