@@ -52,21 +52,22 @@ export default function Nav() {
             ref={navRef}
             className={`sticky top-0 w-full z-50 bg-white transition-shadow ease-in-out duration-200 ${navBottomBorderShadow ? 'shadow-md' : ''}`}
         >
-            <div className="relative py-1 bg-white">
+            <div className="relative py-2 bg-white">
                 <div className="containers flex items-center justify-between">
                     {/* LOGO */}
-                    <Link to="/" className="flex items-center gap-1">
+                    <Link to="/" className="flex gap-1">
                         <img
                             src={logo}
                             alt="Heritage Logo"
-                            className="w-[70px]"
+                            className="w-[60px] md:w-[70px]"
                         />
-                        <div className="hidden md:flex md:flex-col md:mt-3">
-                            <span className="md:text-4xl font-medium">
+                        <div className="flex flex-col justify-center mt-2 md:mt-3">
+                            <span className="text-xl md:text-4xl font-medium">
                                 HERITAGE
                             </span>
-                            <span className="text-[.95rem] tracking-wide -mt-2">
-                                Animal Hospital of NWA
+                            <span className="text-[.85rem] md:text-[.95rem] text-[#405764] md:tracking-wide -mt-[.5rem] md:-mt-2">
+                                Animal Hospital{' '}
+                                <span className="hidden md:inline">of NWA</span>
                             </span>
                         </div>
                     </Link>
