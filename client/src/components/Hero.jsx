@@ -8,14 +8,15 @@ export default function Hero() {
         <>
             <main
                 className="relative flex flex-col justify-between"
-                style={{ minHeight: `calc(100dvh - 65px)` }}
+                // style={{ minHeight: `calc(100dvh - 65px)` }}
+                // style={{ minHeight: `100dvh` }}
             >
                 <img
                     src={heroFrenchie}
                     alt="French Bulldog Puppy"
-                    className="w-full min-h-screen md:max-h-[900px] object-cover"
+                    className="w-full min-h-screen lg:min-h-0 lg:max-h-[830px] object-cover"
                 />
-                <div className="hero-content w-[90%] lg:max-w-[1400px] left-1/2 transform -translate-x-1/2 absolute flex flex-col gap-3 md:gap-6 mt-8 lg:mt-14">
+                <div className="hero-content w-[90%] lg:max-w-[1400px] left-1/2 transform -translate-x-1/2 absolute flex flex-col gap-3 md:gap-6 mt-8 lg:mt-10">
                     <h1 className="font-cal text-3xl md:text-5xl lg:w-[55%] text-[#1A2954]">
                         Delivering Exceptional Veterinary Care with Compassion,
                         Integrity, and Commitment{' '}
