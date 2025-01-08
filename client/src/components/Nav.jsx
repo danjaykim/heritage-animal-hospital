@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'motion/react'
 import Hamburger from 'hamburger-react'
 import NavLinks from './NavLinks'
-import logo from '../assets/images/heri-logo.png'
+import logo from '../assets/images/heri-logo.webp'
 
 export default function Nav() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -50,7 +50,7 @@ export default function Nav() {
     return (
         <nav
             ref={navRef}
-            className={`sticky top-0 w-full z-50 bg-white transition-shadow ease-in-out duration-200 ${navBottomBorderShadow ? 'shadow-md' : ''}`}
+            className={`sticky top-0 w-full z-50 py-1 bg-white transition-shadow ease-in-out duration-200 ${navBottomBorderShadow ? 'shadow-md' : ''}`}
         >
             <div className="relative py-2 bg-white">
                 <div className="containers flex items-center justify-between">
