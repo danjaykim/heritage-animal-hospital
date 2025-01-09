@@ -16,8 +16,8 @@ export default function Hero() {
                     alt="French Bulldog Puppy"
                     className="w-full min-h-screen lg:min-h-0 lg:max-h-[830px] object-cover"
                 />
-                <div className="hero-content w-[90%] lg:max-w-[1400px] left-1/2 transform -translate-x-1/2 absolute flex flex-col gap-3 md:gap-6 mt-8 lg:mt-14">
-                    <h1 className="font-cal text-3xl md:text-4xl lg:w-[60%] text-[#1A2954]">
+                <div className="hero-content w-[90%] lg:max-w-[1400px] left-1/2 transform -translate-x-1/2 absolute flex flex-col gap-6 md:gap-6 mt-8 lg:mt-14">
+                    <h1 className="font-cal text-3xl md:text-4xl md:w-[90%] lg:w-[60%] text-[#1A2954]">
                         Delivering Exceptional Veterinary Care with Compassion,
                         Integrity, and Commitment{' '}
                         <span className="hidden lg:inline">
@@ -29,9 +29,6 @@ export default function Hero() {
                         <span className="font-bold">small animals</span> and{' '}
                         <span className="font-bold">equine</span> throughout
                         Northwest Arkansas and beyond
-                    </p>
-                    <p className="font-light text-[#1A2954] text-2xl md:hidden">
-                        Call: 123-456-7891
                     </p>
                     <HeroButton to="/test">
                         <div className="flex items-center gap-2">
