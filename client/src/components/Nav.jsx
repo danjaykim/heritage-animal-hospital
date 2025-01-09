@@ -7,6 +7,7 @@ import logo from '../assets/images/heri-logo.webp'
 
 export default function Nav() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [isMobile, setIsMobile] = useState(false)
     const [navBottomBorderShadow, setNavBottomBorderShadow] = useState(false)
     const navRef = useRef(null)
 
@@ -24,6 +25,16 @@ export default function Nav() {
         const handleScroll = () => setNavBottomBorderShadow(scrollY > 100)
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 1024)
+            if (!(window.innerWidth < 1024)) setIsMenuOpen(false)
+        }
+        handleResize()
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
     }, [])
 
     const menuPulldown = {
@@ -50,9 +61,9 @@ export default function Nav() {
     return (
         <nav
             ref={navRef}
-            className={`sticky top-0 w-full z-50 py-1 bg-white transition-shadow ease-in-out duration-200 ${navBottomBorderShadow ? 'shadow-md' : ''}`}
+            className={`sticky top-0 w-full z-50 bg-white transition-shadow ease-in-out duration-200 ${navBottomBorderShadow ? 'shadow-md' : ''}`}
         >
-            <div className="relative py-2 bg-white">
+            <div className="relative py-3 bg-white">
                 <div className="containers flex items-center justify-between">
                     {/* LOGO */}
                     <Link to="/" className="flex gap-1 font-jost">
@@ -85,7 +96,7 @@ export default function Nav() {
                     </div>
 
                     {/* DESKTOP NAV MENU/LINKS */}
-                    <NavLinks className="hidden lg:flex lg:gap-10 font-medium text-[#5A5C50] text-[1.2rem]" />
+                    <NavLinks className="hidden lg:flex lg:gap-10 font-medium text-[#1A2954] text-[1.2rem]" />
                 </div>
 
                 {/* MOBILE NAV MENU/LINKS OPEN */}
@@ -93,9 +104,9 @@ export default function Nav() {
                     initial="close"
                     animate={isMenuOpen ? 'open' : 'close'}
                     variants={menuPulldown}
-                    className="absolute -z-10 top-full w-full py-6 bg-[#F8F4EC]/70 backdrop-blur-sm lg:hidden"
+                    className="absolute -z-10 top-full w-full py-6 bg-[#fff] lg:hidden"
                 >
-                    <NavLinks className="flex flex-col items-center gap-4 text-[#5A5C50] text-lg" />
+                    <NavLinks className="containers flex flex-col items-start gap-4 text-[#1A2954] text-xl tracking-wide" />
                 </motion.div>
             </div>
         </nav>
