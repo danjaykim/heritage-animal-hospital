@@ -15,5 +15,5 @@ body {
 }
 
 .containers {
-    @apply w-[90%] lg:max-w-[1400px] mx-auto;
+    @apply w-[90%] lg:max-w-[1400px] mx-auto overflow-hidden;
 }

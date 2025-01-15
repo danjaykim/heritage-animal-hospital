@@ -106,7 +106,7 @@ export default function Nav() {
                     variants={menuPulldown}
                     className="absolute -z-10 top-full w-full py-6 bg-[#fff] lg:hidden"
                 >
-                    <NavLinks className="containers flex flex-col items-start gap-4 text-[#1A2954] text-xl tracking-wide" />
+                    <NavLinks className="containers flex flex-col items-center gap-4 text-[#1A2954] text-xl tracking-wide" />
                 </motion.div>
             </div>
         </nav>

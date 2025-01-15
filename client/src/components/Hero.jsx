@@ -16,7 +16,7 @@ export default function Hero() {
                     alt="French Bulldog Puppy"
                     className="w-full min-h-screen lg:min-h-0 lg:max-h-[830px] object-cover"
                 />
-                <div className="hero-content w-[90%] lg:max-w-[1400px] left-1/2 transform -translate-x-1/2 absolute flex flex-col gap-6 md:gap-6 mt-8 lg:mt-14">
+                <div className="hero-content w-[90%] lg:max-w-[1400px] left-1/2 transform -translate-x-1/2 absolute flex flex-col gap-6 mt-8 lg:mt-12">
                     <h1 className="font-cal text-3xl md:text-4xl md:w-[90%] lg:w-[60%] text-[#1A2954]">
                         Delivering Exceptional Veterinary Care with Compassion,
                         Integrity, and Commitment{' '}
