@@ -88,10 +88,10 @@ export default function Nav() {
                         <Hamburger
                             toggled={isMenuOpen}
                             toggle={setIsMenuOpen}
-                            direction="right"
                             size={25}
                             rounded
                             label="Open Hamburger Menu"
+                            color="#1A2954"
                         />
                     </div>
 
