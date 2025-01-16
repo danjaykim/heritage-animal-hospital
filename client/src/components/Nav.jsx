@@ -83,9 +83,9 @@ export default function Nav() {
                         </div>
                     </Link>
 
-                    {/* HAMBURGER ICON (MOBILE ONLY) */}
+                    {/* PHONE / HAMBURGER */}
                     <div className="lg:hidden flex items-center gap-2">
-                        <a href="tel:+11234567890">
+                        <a href="tel:+1234567890">
                             {/* https://svgbox.net/ */}
                             <svg
                                 width="24"
@@ -125,9 +125,9 @@ export default function Nav() {
                     initial="close"
                     animate={isMenuOpen ? 'open' : 'close'}
                     variants={menuPulldown}
-                    className="absolute -z-10 top-full w-full py-6 bg-[#fff] lg:hidden"
+                    className="absolute -z-10 top-full w-full py-4 bg-[#fff] lg:hidden"
                 >
-                    <NavLinks className="containers flex flex-col items-center gap-4 text-[#1A2954] text-xl tracking-wide" />
+                    <NavLinks className="containers flex flex-col items-center gap-3 text-[#1A2954] text-[1.3rem] tracking-wide" />
                 </motion.div>
             </div>
         </nav>
