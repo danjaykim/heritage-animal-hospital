@@ -117,7 +117,10 @@ export default function Nav() {
                     </div>
 
                     {/* DESKTOP NAV MENU/LINKS */}
-                    <NavLinks className="hidden lg:flex lg:gap-10 font-medium text-[#1A2954] text-[1.2rem]" />
+                    <NavLinks
+                        isMobile={isMobile}
+                        className="hidden lg:flex lg:gap-10 font-medium text-[#1A2954] text-[1.2rem]"
+                    />
                 </div>
 
                 {/* MOBILE NAV MENU/LINKS OPEN */}
@@ -127,7 +130,10 @@ export default function Nav() {
                     variants={menuPulldown}
                     className="absolute -z-10 top-full w-full py-4 bg-[#fff] lg:hidden"
                 >
-                    <NavLinks className="containers flex flex-col items-center gap-3 text-[#1A2954] text-[1.3rem] tracking-wide" />
+                    <NavLinks
+                        isMobile={isMobile}
+                        className="containers flex flex-col items-center gap-3 text-[#1A2954] text-[1.3rem] tracking-wide"
+                    />
                 </motion.div>
             </div>
         </nav>
