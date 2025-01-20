@@ -61,7 +61,10 @@ export default function NavLinks({ className, isMobile }) {
                 return (
                     <li
                         key={index}
-                        className={`flex justify-center ${link.hasDropdown ? 'relative' : ''}`}
+                        className={`
+                            flex justify-center hover:text-[#3F5E98] transition-colors duration-300 
+                            ${!isMobile && link.hasDropdown ? 'relative hover:underline underline-offset-1' : ''}
+                        `}
                         onMouseEnter={() =>
                             // !isTouchDevice &&
                             !isMobile &&
@@ -97,14 +100,14 @@ export default function NavLinks({ className, isMobile }) {
                                     variants={subMenuPulldown}
                                     className="subdropdown-menu absolute top-full pointer-events-auto w-auto -mt-[.5rem] drop-shadow-md px-4 pt-6 pb-4 bg-white"
                                 >
-                                    <ul className="flex flex-col items-start">
+                                    <ul className="flex flex-col items-start text-[#1A2954]">
                                         {link.dropdownLinks.map(
                                             (sublink, subIndex) => {
                                                 return (
                                                     <li key={subIndex}>
                                                         <NavLink
                                                             to={sublink.path}
-                                                            className="font-light whitespace-nowrap"
+                                                            className="font-light whitespace-nowrap hover:text-[#3F5E98]"
                                                         >
                                                             {sublink.title}{' '}
                                                         </NavLink>
