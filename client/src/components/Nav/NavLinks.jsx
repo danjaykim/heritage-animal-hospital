@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
-import { navLinks } from './NavLinkData'
+import { navLinks } from './navLinkData'
+import { motion } from 'motion/react'
 
 export default function NavLinks({ className, isMobile }) {
     const [currentDropdown, setCurrentDropdown] = useState(null)
@@ -35,7 +36,24 @@ export default function NavLinks({ className, isMobile }) {
             )
     }, [])
 
-    console.log(navLinks)
+    const subMenuPulldown = {
+        open: {
+            y: 10,
+            transition: {
+                type: 'spring',
+                stiffness: 250,
+                damping: 30,
+            },
+        },
+        close: {
+            y: 0,
+            transition: {
+                type: 'spring',
+                stiffness: 250,
+                damping: 30,
+            },
+        },
+    }
 
     return (
         <ul ref={dropdownRef} className={className}>
@@ -45,12 +63,14 @@ export default function NavLinks({ className, isMobile }) {
                         key={index}
                         className={`flex justify-center ${link.hasDropdown ? 'relative' : ''}`}
                         onMouseEnter={() =>
-                            !isTouchDevice &&
+                            // !isTouchDevice &&
+                            !isMobile &&
                             link.hasDropdown &&
                             setCurrentDropdown(index)
                         }
                         onMouseLeave={() =>
-                            !isTouchDevice &&
+                            // !isTouchDevice &&
+                            !isMobile &&
                             link.hasDropdown &&
                             setCurrentDropdown(null)
                         }
@@ -67,22 +87,33 @@ export default function NavLinks({ className, isMobile }) {
                         {!isMobile &&
                             link.hasDropdown &&
                             currentDropdown === index && (
-                                <ul className="subdropdown-menu shadow-md absolute top-full flex flex-col items-start w-auto px-4 py-5 bg-slate-200">
-                                    {link.dropdownLinks.map(
-                                        (sublink, subIndex) => {
-                                            return (
-                                                <li key={subIndex}>
-                                                    <NavLink
-                                                        to={sublink.path}
-                                                        className="lg:whitespace-nowrap"
-                                                    >
-                                                        {sublink.title}{' '}
-                                                    </NavLink>
-                                                </li>
-                                            )
-                                        }
-                                    )}
-                                </ul>
+                                <motion.div
+                                    initial="close"
+                                    animate={
+                                        currentDropdown === index
+                                            ? 'open'
+                                            : 'close'
+                                    }
+                                    variants={subMenuPulldown}
+                                    className="subdropdown-menu absolute top-full pointer-events-auto w-auto -mt-[.5rem] drop-shadow-md px-4 pt-6 pb-4 bg-white"
+                                >
+                                    <ul className="flex flex-col items-start">
+                                        {link.dropdownLinks.map(
+                                            (sublink, subIndex) => {
+                                                return (
+                                                    <li key={subIndex}>
+                                                        <NavLink
+                                                            to={sublink.path}
+                                                            className="font-light whitespace-nowrap"
+                                                        >
+                                                            {sublink.title}{' '}
+                                                        </NavLink>
+                                                    </li>
+                                                )
+                                            }
+                                        )}
+                                    </ul>
+                                </motion.div>
                             )}
                     </li>
                 )
