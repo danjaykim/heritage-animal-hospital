@@ -11,7 +11,7 @@ export default function NavLinks({ className, isMobile }) {
         {
             title: 'About',
             path: '/about',
-            dropdown: true,
+            hasDropdown: true,
             dropdownLinks: [
                 { title: 'Our Team', path: '/about#our-team' },
                 { title: 'Our Mission', path: '/about#our-mission' },
@@ -20,7 +20,7 @@ export default function NavLinks({ className, isMobile }) {
         {
             title: 'Services',
             path: '/services',
-            dropdown: true,
+            hasDropdown: true,
             dropdownLinks: [
                 { title: 'Small Animal', path: '/services#small-animal' },
                 {
@@ -32,7 +32,7 @@ export default function NavLinks({ className, isMobile }) {
         {
             title: 'Resources',
             path: '/resources',
-            dropdown: true,
+            hasDropdown: true,
             dropdownLinks: [
                 {
                     title: 'Request Appointment',
@@ -78,15 +78,15 @@ export default function NavLinks({ className, isMobile }) {
                 return (
                     <li
                         key={index}
-                        className={`flex justify-center ${link.dropdown ? 'relative' : ''}`}
+                        className={`flex justify-center ${link.hasDropdown ? 'relative' : ''}`}
                         onMouseEnter={() =>
                             !isTouchDevice &&
-                            link.dropdown &&
+                            link.hasDropdown &&
                             setCurrentDropdown(index)
                         }
                         onMouseLeave={() =>
                             !isTouchDevice &&
-                            link.dropdown &&
+                            link.hasDropdown &&
                             setCurrentDropdown(null)
                         }
                     >
@@ -100,7 +100,7 @@ export default function NavLinks({ className, isMobile }) {
 
                         {/* Desktop Nav Link Hover */}
                         {!isMobile &&
-                            link.dropdown &&
+                            link.hasDropdown &&
                             currentDropdown === index && (
                                 <ul className="subdropdown-menu absolute top-full flex flex-col items-center w-48 p-4 bg-slate-200">
                                     {link.dropdownLinks.map(
@@ -108,7 +108,7 @@ export default function NavLinks({ className, isMobile }) {
                                             return (
                                                 <li key={subIndex}>
                                                     <NavLink to={sublink.path}>
-                                                        {sublink.title}
+                                                        {sublink.title}{' '}
                                                     </NavLink>
                                                 </li>
                                             )
