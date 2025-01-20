@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'motion/react'
 import Hamburger from 'hamburger-react'
 import NavLinks from './NavLinks'
-import logo from '../assets/images/heri-logo.webp'
+import logo from '../../assets/images/heri-logo.webp'
 
 export default function Nav() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)

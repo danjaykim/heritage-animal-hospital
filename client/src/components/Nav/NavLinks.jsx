@@ -1,48 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
+import { navLinks } from './NavLinkData'
 
 export default function NavLinks({ className, isMobile }) {
     const [currentDropdown, setCurrentDropdown] = useState(null)
     const [isTouchDevice, setIsTouchDevice] = useState(false)
     const dropdownRef = useRef(null)
-
-    const navLinks = [
-        { title: 'Home', path: '/' },
-        {
-            title: 'About',
-            path: '/about',
-            hasDropdown: true,
-            dropdownLinks: [
-                { title: 'Our Team', path: '/about#our-team' },
-                { title: 'Our Mission', path: '/about#our-mission' },
-            ],
-        },
-        {
-            title: 'Services',
-            path: '/services',
-            hasDropdown: true,
-            dropdownLinks: [
-                { title: 'Small Animal', path: '/services#small-animal' },
-                {
-                    title: 'Equine / Live Stock',
-                    path: '/services#equine-livestock',
-                },
-            ],
-        },
-        {
-            title: 'Resources',
-            path: '/resources',
-            hasDropdown: true,
-            dropdownLinks: [
-                {
-                    title: 'Request Appointment',
-                    path: '/resources/appointment',
-                },
-                { title: 'FAQ', path: '/resources/faq' },
-            ],
-        },
-        { title: 'Contact', path: '/' },
-    ]
 
     useEffect(() => {
         const checkIfTouchDevice = () => {
@@ -71,6 +34,8 @@ export default function NavLinks({ className, isMobile }) {
                 handleOutsideDropdownClick
             )
     }, [])
+
+    console.log(navLinks)
 
     return (
         <ul ref={dropdownRef} className={className}>
@@ -102,12 +67,15 @@ export default function NavLinks({ className, isMobile }) {
                         {!isMobile &&
                             link.hasDropdown &&
                             currentDropdown === index && (
-                                <ul className="subdropdown-menu absolute top-full flex flex-col items-center w-48 p-4 bg-slate-200">
+                                <ul className="subdropdown-menu shadow-md absolute top-full flex flex-col items-start w-auto px-4 py-5 bg-slate-200">
                                     {link.dropdownLinks.map(
                                         (sublink, subIndex) => {
                                             return (
                                                 <li key={subIndex}>
-                                                    <NavLink to={sublink.path}>
+                                                    <NavLink
+                                                        to={sublink.path}
+                                                        className="lg:whitespace-nowrap"
+                                                    >
                                                         {sublink.title}{' '}
                                                     </NavLink>
                                                 </li>
