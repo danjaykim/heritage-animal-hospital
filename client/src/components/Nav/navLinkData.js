@@ -16,7 +16,7 @@ export const navLinks = [
         dropdownLinks: [
             { title: 'Small Animal', path: '/services#small-animal' },
             {
-                title: 'Equine / Live Stock',
+                title: 'Equine / Livestock',
                 path: '/services#equine-livestock',
             },
         ],

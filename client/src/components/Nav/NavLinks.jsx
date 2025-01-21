@@ -38,19 +38,19 @@ export default function NavLinks({ className, isMobile }) {
 
     const subMenuPulldown = {
         open: {
-            y: 10,
+            scaleY: 1,
+            opacity: 1,
             transition: {
-                type: 'spring',
-                stiffness: 250,
-                damping: 30,
+                scaleY: { type: 'spring', stiffness: 250, damping: 30 },
+                opacity: { duration: 0.3 },
             },
         },
         close: {
-            y: 0,
+            scaleY: 0,
+            opacity: 0,
             transition: {
-                type: 'spring',
-                stiffness: 250,
-                damping: 30,
+                scaleY: { type: 'spring', stiffness: 250, damping: 30 },
+                opacity: { duration: 0.3 },
             },
         },
     }
@@ -98,7 +98,8 @@ export default function NavLinks({ className, isMobile }) {
                                             : 'close'
                                     }
                                     variants={subMenuPulldown}
-                                    className="subdropdown-menu absolute top-full pointer-events-auto w-auto -mt-[.5rem] drop-shadow-md px-4 pt-6 pb-4 bg-white"
+                                    className="subdropdown-menu absolute rounded top-full pointer-events-auto 
+                                    w-auto origin-top overflow-hidden drop-shadow-md px-4 pt-6 pb-4 bg-white"
                                 >
                                     <ul className="flex flex-col items-start text-[#1A2954]">
                                         {link.dropdownLinks.map(
@@ -107,7 +108,7 @@ export default function NavLinks({ className, isMobile }) {
                                                     <li key={subIndex}>
                                                         <NavLink
                                                             to={sublink.path}
-                                                            className="font-light whitespace-nowrap hover:text-[#3F5E98]"
+                                                            className="text-[1.1rem] font-light whitespace-nowrap hover:text-[#3F5E98]"
                                                         >
                                                             {sublink.title}{' '}
                                                         </NavLink>
