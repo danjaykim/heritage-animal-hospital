@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import { navLinks } from './navLinkData'
 import { motion } from 'motion/react'
+import { subMenuPulldown } from '../../animations/animations'
 
 export default function NavLinks({ className, isMobile }) {
     const [currentDropdown, setCurrentDropdown] = useState(null)
@@ -35,25 +36,6 @@ export default function NavLinks({ className, isMobile }) {
                 handleOutsideDropdownClick
             )
     }, [])
-
-    const subMenuPulldown = {
-        open: {
-            scaleY: 1,
-            opacity: 1,
-            transition: {
-                scaleY: { type: 'spring', stiffness: 250, damping: 30 },
-                opacity: { duration: 0.3 },
-            },
-        },
-        close: {
-            scaleY: 0,
-            opacity: 0,
-            transition: {
-                scaleY: { type: 'spring', stiffness: 250, damping: 30 },
-                opacity: { duration: 0.3 },
-            },
-        },
-    }
 
     // Large touch devices
     const handleDropdownClick = (event, index, hasDropdown) => {

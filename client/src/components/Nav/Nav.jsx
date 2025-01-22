@@ -4,6 +4,7 @@ import { motion } from 'motion/react'
 import Hamburger from 'hamburger-react'
 import NavLinks from './NavLinks'
 import logo from '../../assets/images/heri-logo.webp'
+import { menuPulldown } from '../../animations/animations'
 
 export default function Nav() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -36,27 +37,6 @@ export default function Nav() {
         window.addEventListener('resize', handleResize)
         return () => window.removeEventListener('resize', handleResize)
     }, [])
-
-    const menuPulldown = {
-        open: {
-            y: 0,
-            // transform: 'translateY(0)',
-            transition: {
-                type: 'spring',
-                stiffness: 250,
-                damping: 30,
-            },
-        },
-        close: {
-            y: -400,
-            // transform: 'translateY(-100%)',
-            transition: {
-                type: 'spring',
-                stiffness: 250,
-                damping: 30,
-            },
-        },
-    }
 
     return (
         <nav
