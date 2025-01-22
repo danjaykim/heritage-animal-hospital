@@ -8,13 +8,11 @@ export default function NavLinks({ className, isMobile }) {
     const [isTouchDevice, setIsTouchDevice] = useState(false)
     const dropdownRef = useRef(null)
 
-    console.log(isTouchDevice)
-
     useEffect(() => {
         const checkIfTouchDevice = () => {
-            setIsTouchDevice(
+            const touchDevice =
                 'ontouchstart' in window || navigator.maxTouchPoints > 0
-            )
+            setIsTouchDevice(touchDevice)
         }
         checkIfTouchDevice()
         window.addEventListener('resize', checkIfTouchDevice)
@@ -60,14 +58,26 @@ export default function NavLinks({ className, isMobile }) {
     // Large touch devices
     const handleDropdownClick = (event, index, hasDropdown) => {
         if (isTouchDevice && !isMobile && hasDropdown) {
-            // if dropdown is already open, allow normal navigation path
-            if (currentDropdown === index) return
+            // // if dropdown is already open, allow normal navigation path
+            // if (currentDropdown === index) return
 
-            // prevent navigation and toggle dropdown menu
-            event.preventDefault()
-            setCurrentDropdown((prev) => (prev === index ? null : index))
+            // // prevent navigation and toggle dropdown menu
+            // event.preventDefault()
+            // setCurrentDropdown((prev) => (prev === index ? null : index))
+
+            // Prevent navigation on first click if dropdown is not already open
+            if (currentDropdown !== index) {
+                event.preventDefault()
+                setCurrentDropdown(index)
+                return
+            }
+
+            // If dropdown is already open, allow normal navigation path
+            setCurrentDropdown(null)
         }
     }
+
+    // console.log({ isTouchDevice, devicePixelRatio: window.devicePixelRatio })
 
     return (
         <ul ref={dropdownRef} className={className}>
@@ -105,9 +115,8 @@ export default function NavLinks({ className, isMobile }) {
                             {link.title}
                         </NavLink>
 
-                        {/* Desktop Nav Link Hover */}
+                        {/* Dropdown Menu Hover */}
                         {!isMobile &&
-                            // !isTouchDevice &&
                             link.hasDropdown &&
                             currentDropdown === index && (
                                 <motion.div
@@ -119,7 +128,7 @@ export default function NavLinks({ className, isMobile }) {
                                     }
                                     variants={subMenuPulldown}
                                     className="subdropdown-menu absolute rounded top-full pointer-events-auto 
-                                    w-auto origin-top drop-shadow-md px-4 pt-6 pb-4 bg-white"
+                                    w-auto origin-top drop-shadow-md px-4 pb-4 pt-6 bg-white"
                                 >
                                     <ul className="flex flex-col items-start text-[#1A2954]">
                                         {link.dropdownLinks.map(
@@ -128,7 +137,7 @@ export default function NavLinks({ className, isMobile }) {
                                                     <li key={subIndex}>
                                                         <NavLink
                                                             to={sublink.path}
-                                                            className="text-[1.1rem] font-light whitespace-nowrap hover:text-[#3F5E98]"
+                                                            className="font-light whitespace-nowrap px-2 py-1 hover:text-[#3F5E98]"
                                                         >
                                                             {sublink.title}{' '}
                                                         </NavLink>
