@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
-import Hero from './components/Hero/Hero.jsx'
+import MainContent from './components/MainContent.jsx'
 
 import './assets/fonts/fonts.css'
 import './index.css'
@@ -13,8 +13,8 @@ const router = createBrowserRouter([
         element: <App />,
         children: [
             {
-                path: '/',
-                element: <Hero />,
+                index: true,
+                element: <MainContent />,
             },
         ],
     },
