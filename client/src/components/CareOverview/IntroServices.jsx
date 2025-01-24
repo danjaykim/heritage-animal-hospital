@@ -4,7 +4,7 @@ import horses from '../../assets/images/omar-prestwich-mS26pmEiVVA-unsplash.webp
 
 export default function IntroServices() {
     return (
-        <div className="flex flex-col items-center gap-5 md:gap-8 text-[#1A2954]">
+        <div className="flex flex-col items-center gap-10 text-[#1A2954]">
             <div className="flex flex-col gap-5">
                 <img
                     src={catDog}
@@ -18,7 +18,25 @@ export default function IntroServices() {
                     ensure the health and well-being of your pets at every stage
                     of life.
                 </p>
-                <Link to="/services#small-animal">Small Animal Services</Link>
+                <Link
+                    to="/services#small-animal"
+                    className="w-fit flex items-center gap-1 -mt-2 group"
+                >
+                    <span className="text-[1.3rem]">Small Animal Services</span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        className="mb-[.05rem] transform duration-300 ease-in-out group-hover:translate-x-1"
+                    >
+                        <path
+                            d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"
+                            strokeWidth="2"
+                            stroke="currentColor"
+                        />
+                    </svg>
+                </Link>
             </div>
             <div className="flex flex-col gap-5">
                 <img src={horses} alt="Horses" className="rounded" />
@@ -29,8 +47,26 @@ export default function IntroServices() {
                     handle both routine and complex needs, with farm calls
                     available for on-site services.
                 </p>
-                <Link to="/services#small-animal">
-                    Equine and Livestock Services
+                <Link
+                    to="/services#equine-livestock"
+                    className="w-fit flex items-center gap-1 -mt-2 group"
+                >
+                    <span className="text-[1.3rem]">
+                        Equine and Livestock Services
+                    </span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        className="mb-[.05rem] transform duration-300 ease-in-out group-hover:translate-x-1"
+                    >
+                        <path
+                            d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"
+                            strokeWidth="2"
+                            stroke="currentColor"
+                        />
+                    </svg>
                 </Link>
             </div>
         </div>
