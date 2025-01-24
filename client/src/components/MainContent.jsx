@@ -1,11 +1,11 @@
 import Hero from './Hero/Hero'
-import RotatingServices from './CareOverview/RotatingServices'
+import CareOverview from './CareOverview/CareOverview'
 
 export default function MainContent() {
     return (
         <>
             <Hero />
-            <RotatingServices />
+            <CareOverview />
         </>
     )
 }
