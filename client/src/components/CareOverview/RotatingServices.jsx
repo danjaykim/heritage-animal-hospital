@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'motion/react'
 import { rotatingServices } from './rotatingServicesData'
 import { rotatingServicesVariants } from '../../animations/animations'
@@ -14,7 +15,7 @@ export default function RotatingServices() {
     })
 
     return (
-        <div className="flex flex-col items-center text-[2.5rem] lg:text-6xl">
+        <div className="flex flex-col items-center text-[2.7rem] md:text-[3.2rem] lg:text-7xl">
             <h2 className="text-[#1A2954]">We provide care for</h2>
             <AnimatePresence mode="wait">
                 <motion.p
@@ -29,6 +30,12 @@ export default function RotatingServices() {
                     {rotatingServices[currServiceIndex]}
                 </motion.p>
             </AnimatePresence>
+            <Link
+                to="/services"
+                className="text-[#1A2954] text-[1.3rem] md:text-[1.4rem] mt-1 md:mt-4"
+            >
+                See all of our services
+            </Link>
         </div>
     )
 }
