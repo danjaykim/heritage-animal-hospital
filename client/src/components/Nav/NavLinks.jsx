@@ -93,8 +93,24 @@ export default function NavLinks({ className, isMobile }) {
                                     link.hasDropdown
                                 )
                             }
+                            className="flex items-center"
                         >
                             {link.title}
+                            {link.hasDropdown && !isMobile && (
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="12"
+                                    height="12"
+                                    viewBox="0 0 24 24"
+                                    className="mb-[.1rem] ml-[.35rem]"
+                                >
+                                    <path
+                                        d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z"
+                                        strokeWidth="2"
+                                        stroke="currentColor"
+                                    />
+                                </svg>
+                            )}
                         </NavLink>
 
                         {/* Dropdown Menu Hover */}
