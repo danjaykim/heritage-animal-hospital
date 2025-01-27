@@ -70,6 +70,7 @@ export default function NavLinks({ className, isMobile }) {
                         className={`
                             flex justify-center hover:text-[#3F5E98] transition-colors duration-300 
                             ${!isMobile && link.hasDropdown ? 'relative hover:underline underline-offset-1' : ''}
+                            ${!isMobile && index === navLinks.length - 2 ? 'border-r border-[#CCCCCC] pr-8' : ''}
                         `}
                         onMouseEnter={() =>
                             !isTouchDevice &&
@@ -102,7 +103,7 @@ export default function NavLinks({ className, isMobile }) {
                                     width="12"
                                     height="12"
                                     viewBox="0 0 24 24"
-                                    className="mb-[.1rem] ml-[.35rem]"
+                                    className="inline-block ml-2 mb-1"
                                 >
                                     <path
                                         d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z"
