@@ -9,10 +9,16 @@ export default {
             xl: '1280px',
         },
         extend: {
+            fontSize: {
+                base: '16px',
+            },
             fontFamily: {
                 cal: ['Cal Sans', 'sans-serif'],
                 jost: ['Jost', 'sans-serif'],
                 zain: ['Zain', 'sans-serif'],
+                dm: ['DM Serif', 'sans-serif'],
+                // excon: ['Excon', 'sans-serif'],
+                hind: ['Hind', 'sans-serif'],
             },
         },
     },

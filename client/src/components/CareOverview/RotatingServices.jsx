@@ -16,7 +16,7 @@ export default function RotatingServices() {
 
     return (
         <div className="flex flex-col items-center text-[2.7rem] md:text-[3.2rem] lg:text-7xl">
-            <h2 className="text-[#1A2954]">We provide care for</h2>
+            <h2 className="font-dm text-[#1A2954]">We provide care for</h2>
             <AnimatePresence mode="wait">
                 <motion.p
                     key={rotatingServices[currServiceIndex]}
@@ -25,14 +25,14 @@ export default function RotatingServices() {
                     animate="animate"
                     exit="exit"
                     transition={{ duration: 0.5 }}
-                    className="text-[#3F5E98] -mt-4 lg:mt-0"
+                    className="font-dm text-[#3F5E98] -mt-4 lg:mt-0"
                 >
                     {rotatingServices[currServiceIndex]}
                 </motion.p>
             </AnimatePresence>
             <Link
                 to="/services"
-                className="text-[#1A2954] text-[1.3rem] md:text-[1.4rem] mt-1 md:mt-4"
+                className="text-[#1A2954] text-base font-medium mt-1 md:mt-4"
             >
                 See all of our services
             </Link>

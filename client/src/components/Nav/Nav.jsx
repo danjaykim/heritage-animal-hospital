@@ -99,7 +99,7 @@ export default function Nav() {
                     {/* DESKTOP NAV MENU/LINKS */}
                     <NavLinks
                         isMobile={isMobile}
-                        className="hidden lg:flex lg:gap-8 font-medium text-[#1A2954] text-[1.2rem]"
+                        className="hidden lg:flex lg:gap-8 text-sm font-medium text-[#1A2954]"
                     />
                 </div>
 

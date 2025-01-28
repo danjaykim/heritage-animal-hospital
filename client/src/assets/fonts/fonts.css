@@ -70,3 +70,47 @@
     font-display: swap;
     src: url('../fonts/zain/Fonts/TTF/Zain-Bold.ttf');
 }
+
+/* Headings */
+@font-face {
+    font-family: 'DM Serif';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/DM_Serif_Text/DMSerifText-Regular.ttf');
+}
+
+/*  */
+
+/* @font-face {
+    font-family: 'Excon';
+    font-weight: 200;
+    font-style: normal;
+    src: url('../fonts/Excon_Complete/Fonts/OTF/Excon-Light.otf');
+}
+
+@font-face {
+    font-family: 'Excon';
+    font-weight: 100;
+    font-style: normal;
+    src: url('../fonts/Excon_Complete/Fonts/OTF/Excon-Thin.otf');
+}
+@font-face {
+    font-family: 'Excon';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/Excon_Complete/Fonts/OTF/Excon-Regular.otf');
+} */
+
+@font-face {
+    font-family: 'Hind';
+    font-weight: 200;
+    font-style: normal;
+    src: url('../fonts/Hind_Complete/Fonts/OTF/Hind-Light.otf');
+}
+
+@font-face {
+    font-family: 'Hind';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/Hind_Complete/Fonts/OTF/Hind-Regular.otf');
+}
