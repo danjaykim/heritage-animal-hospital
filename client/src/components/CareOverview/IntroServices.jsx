@@ -11,7 +11,7 @@ export default function IntroServices() {
                     alt="Cat and puppy in a field"
                     className="rounded"
                 />
-                <p className="text-[1.3rem] font-light leading-7">
+                <p className="font-light leading-7">
                     Our animal hospital provides expert care for small animals,
                     including routine exams, vaccinations, dental care, and
                     surgical procedures. We focus on personalized treatment to
@@ -22,7 +22,7 @@ export default function IntroServices() {
                     to="/services#small-animal"
                     className="w-fit flex items-center gap-1 -mt-2 group"
                 >
-                    <span className="text-[1.3rem]">Small Animal Services</span>
+                    <span>Small Animal Services</span>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="12"
@@ -40,7 +40,7 @@ export default function IntroServices() {
             </div>
             <div className="flex flex-col gap-5">
                 <img src={horses} alt="Horses" className="rounded" />
-                <p className="text-[1.3rem] font-light leading-7">
+                <p className="font-light leading-7">
                     We offer specialized care for equine and livestock animals,
                     including emergency treatment, preventative care, and
                     reproductive health management. Our team is equipped to
@@ -51,9 +51,7 @@ export default function IntroServices() {
                     to="/services#equine-livestock"
                     className="w-fit flex items-center gap-1 -mt-2 group"
                 >
-                    <span className="text-[1.3rem]">
-                        Equine and Livestock Services
-                    </span>
+                    <span>Equine and Livestock Services</span>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="12"

@@ -15,7 +15,7 @@ export default function RotatingServices() {
     })
 
     return (
-        <div className="flex flex-col items-center text-[2.7rem] md:text-[3.2rem] lg:text-7xl">
+        <div className="flex flex-col items-center text-[2.5rem] md:text-[3.2rem] lg:text-7xl">
             <h2 className="font-dm text-[#1A2954]">We provide care for</h2>
             <AnimatePresence mode="wait">
                 <motion.p
@@ -25,16 +25,29 @@ export default function RotatingServices() {
                     animate="animate"
                     exit="exit"
                     transition={{ duration: 0.5 }}
-                    className="font-dm text-[#3F5E98] -mt-4 lg:mt-0"
+                    className="font-dm text-[#3F5E98] lg:mt-1 text-center leading-tight min-h-[7rem]"
                 >
                     {rotatingServices[currServiceIndex]}
                 </motion.p>
             </AnimatePresence>
             <Link
                 to="/services"
-                className="text-[#1A2954] text-base font-medium mt-1 md:mt-4"
+                className="w-fit flex items-center gap-2 group text-[#1A2954] text-base md:mt-6"
             >
-                See all of our services
+                <span>See all of our services</span>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    className="-mb-[.1rem] transform duration-300 ease-in-out group-hover:translate-x-1"
+                >
+                    <path
+                        d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"
+                        strokeWidth="2"
+                        stroke="currentColor"
+                    />
+                </svg>
             </Link>
         </div>
     )

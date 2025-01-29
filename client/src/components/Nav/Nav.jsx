@@ -99,7 +99,7 @@ export default function Nav() {
                     {/* DESKTOP NAV MENU/LINKS */}
                     <NavLinks
                         isMobile={isMobile}
-                        className="hidden lg:flex lg:gap-8 text-sm font-medium text-[#1A2954]"
+                        className="hidden lg:flex lg:gap-8 text-[.9rem] tracking-wide text-[#1A2954]"
                     />
                 </div>
 
@@ -112,7 +112,7 @@ export default function Nav() {
                 >
                     <NavLinks
                         isMobile={isMobile}
-                        className="containers flex flex-col items-center gap-3 text-[#1A2954] text-[1.3rem] tracking-wide"
+                        className="containers flex flex-col items-center gap-3 text-[#1A2954]"
                     />
                 </motion.div>
             </div>

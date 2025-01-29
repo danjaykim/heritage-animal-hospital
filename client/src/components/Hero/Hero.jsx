@@ -17,17 +17,18 @@ export default function Hero() {
                 className="hero-content w-[90%] lg:max-w-[1400px] left-1/2 
                     transform -translate-x-1/2 absolute flex flex-col gap-6 mt-8 lg:mt-12"
             >
-                <h1 className="font-dm font-semibold text-3xl md:text-4xl lg:text-5xl md:w-[90%] lg:w-[60%] text-[#1A2954]">
-                    Delivering Exceptional Veterinary Care with Compassion,
+                <h1 className="font-dm text-[2.7rem] tracking-[-0.02rem] leading-none md:text-6xl lg:text-7xl w-[75%] md:w-[90%] lg:w-[60%] text-[#1A2954]">
+                    {/* Delivering Exceptional Veterinary Care with Compassion,
                     Integrity, and Commitment{' '}
                     <span className="hidden lg:inline">
                         to Grow the Human-Animal Bond
-                    </span>
+                    </span> */}
+                    Your Partner in Pet Health
                 </h1>
-                <p className="hidden md:block md:w-[75%] lg:w-[35%] font-light md:text-[#1A2954] text-[1.1rem]">
+                <p className="hidden md:block md:w-[75%] lg:w-[35%] font-extralight md:text-[#1A2954] text-[1.2rem]">
                     Proudly serving expert care for{' '}
-                    <span className="font-bold">small animals</span> and{' '}
-                    <span className="font-bold">equine</span> throughout
+                    <span className="font-medium">small animals</span> and{' '}
+                    <span className="font-medium">equine</span> throughout
                     Northwest Arkansas and beyond
                 </p>
                 <HeroButton to="/test">
