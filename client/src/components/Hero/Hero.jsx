@@ -15,7 +15,7 @@ export default function Hero() {
             />
             <div
                 className="hero-content w-[90%] lg:max-w-[1400px] left-1/2 
-                    transform -translate-x-1/2 absolute flex flex-col gap-6 mt-8 lg:mt-12"
+                    transform -translate-x-1/2 absolute flex flex-col gap-4 md:gap-6 mt-6 md:mt-12"
             >
                 <h1 className="font-dm text-[2.7rem] tracking-[-0.02rem] leading-none md:text-6xl lg:text-7xl w-[75%] md:w-[90%] lg:w-[60%] text-[#1A2954]">
                     {/* Delivering Exceptional Veterinary Care with Compassion,
@@ -25,7 +25,7 @@ export default function Hero() {
                     </span> */}
                     Your Partner in Pet Health
                 </h1>
-                <p className="hidden md:block md:w-[75%] lg:w-[35%] font-extralight md:text-[#1A2954] text-[1.2rem]">
+                <p className="md:w-[75%] lg:w-[35%] font-light tracking-wide leading-6 md:text-[#1A2954] md:text-[1.2rem]">
                     Proudly serving expert care for{' '}
                     <span className="font-medium">small animals</span> and{' '}
                     <span className="font-medium">equine</span> throughout

@@ -4,7 +4,7 @@ export default function IntroMessage() {
             <h2 className="font-dm self-start md:self-center text-[2.3rem] md:text-[2.7rem] lg:text-[3.2rem] leading-none md:leading-[2.5rem] lg:leading-[3rem]">
                 Compassionate care <div>for your beloved pets</div>
             </h2>
-            <p className="text-[1.1rem] font-light leading-7 md:w-1/2 md:text-center">
+            <p className="font-light tracking-wide leading-6 md:w-1/2 md:text-center">
                 At Heritage Animal Hospital, we treat your pets like family,
                 providing compassionate care and expert treatment in a
                 comfortable, welcoming environment.
