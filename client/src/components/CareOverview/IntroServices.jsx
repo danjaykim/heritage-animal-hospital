@@ -1,18 +1,14 @@
 import { Link } from 'react-router-dom'
-
-import dog from '../../assets/images/DoogieDoodle.png'
-import smallAnimal from '../../assets/images/introservices-smallanimal.png'
-
-import horse from '../../assets/images/horse.webp'
-import cat from '../../assets/images/cat.webp'
+import horseVet from '../../assets/images/horse.webp'
+import catVet from '../../assets/images/cat.webp'
 
 export default function IntroServices() {
     return (
-        <div className="flex flex-col md:flex-row gap-14 text-[#1A2954]">
+        <section className="containers flex flex-col md:flex-row gap-14 text-[#1A2954]">
             <div className="flex flex-col flex-1 gap-5 lg:items-center md:w-1/2">
                 <div className="flex md:justify-center">
                     <img
-                        src={cat}
+                        src={catVet}
                         alt="Vet and cat illustration"
                         className="w-2/5 md:w-1/3"
                     />
@@ -47,7 +43,7 @@ export default function IntroServices() {
             <div className="flex flex-col flex-1 gap-5 lg:items-center md:w-1/2">
                 <div className="flex md:justify-center">
                     <img
-                        src={horse}
+                        src={horseVet}
                         alt="Horse and vet illustration"
                         className="w-2/5 md:w-1/3"
                     />
@@ -78,6 +74,6 @@ export default function IntroServices() {
                     </svg>
                 </Link>
             </div>
-        </div>
+        </section>
     )
 }

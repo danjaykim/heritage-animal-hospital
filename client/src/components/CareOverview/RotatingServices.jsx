@@ -15,7 +15,7 @@ export default function RotatingServices() {
     })
 
     return (
-        <div className="flex flex-col items-center text-[2.5rem] md:text-[3.2rem] lg:text-7xl">
+        <section className="containers flex flex-col items-center text-[2.5rem] md:text-[3.2rem] lg:text-7xl">
             <h2 className="font-dm text-[#1A2954]">We provide care for</h2>
             <AnimatePresence mode="wait">
                 <motion.p
@@ -49,6 +49,6 @@ export default function RotatingServices() {
                     />
                 </svg>
             </Link>
-        </div>
+        </section>
     )
 }
