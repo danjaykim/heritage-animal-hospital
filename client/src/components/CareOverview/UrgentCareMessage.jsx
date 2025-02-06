@@ -4,7 +4,7 @@ import emDog from '../../assets/images/jay-wennington-vXjNwYi2B8M-unsplash.webp'
 export default function UrgentCareMessage() {
     return (
         <section className="containers flex flex-col md:flex-row lg:justify-between md:gap-8">
-            <div className="h-[23rem] md:w-1/2 relative">
+            <div className="h-[23rem] md:min-h-[23rem] lg:min-h-[37rem] md:w-1/2 relative">
                 <img
                     src={emDog}
                     alt="Golden Doodle posing"
@@ -22,11 +22,11 @@ export default function UrgentCareMessage() {
                     absolute left-6 md:left-0 lg:top-0"
                 />
             </div>
-            <div className="flex flex-col gap-4 text-[#1A2954] md:w-1/2">
-                <p className="font-dm text-4xl lg:text-6xl">
+            <div className="flex flex-col gap-4 lg:gap-8 text-[#1A2954] md:w-1/2">
+                <p className="font-dm text-4xl lg:text-5xl lg:w-[90%]">
                     Emergency and urgent care walk-ins welcome
                 </p>
-                <p className="font-extralight">
+                <p className="font-extralight lg:w-[90%]">
                     We understand that emergencies can happen at any time.
                     That's why we gladly welcome walk-ins for urgent care and
                     emergency services. Our dedicated team is here to provide

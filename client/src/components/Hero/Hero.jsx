@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import heroFrenchie from '../../assets/images/hero-frenchie.webp'
 import HeroButton from './HeroButton'
 
@@ -25,7 +26,7 @@ export default function Hero() {
                     </span> */}
                     Your Partner in Pet Health
                 </h1>
-                <p className="md:w-[75%] lg:w-[35%] font-light tracking-wide leading-6 md:text-[#1A2954] md:text-[1.2rem]">
+                <p className="text-[#1A2954] md:w-[75%] lg:w-[35%] font-extralight tracking-wide leading-6 md:text-[1.2rem]">
                     Proudly serving expert care for{' '}
                     <span className="font-medium">small animals</span> and{' '}
                     <span className="font-medium">equine</span> throughout
@@ -74,12 +75,13 @@ export default function Hero() {
                         </svg>
                     </div>
                 </HeroButton>
-                <HeroButton
+                <Link
                     to="/"
-                    className="hidden md:flex md:items-center h-[66px]"
+                    className="hidden md:inline-block md:w-fit text-[#1A2954] font-extralight 
+                    border-b border-[#405764] hover:text-[#3F5E98] transition-colors duration-200 leading-none"
                 >
-                    Learn about Our Services
-                </HeroButton>
+                    Learn about our services
+                </Link>
             </div>
         </main>
     )
