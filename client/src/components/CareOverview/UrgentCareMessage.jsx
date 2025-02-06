@@ -1,29 +1,28 @@
-import emCat from '../../assets/images/em-cat.webp'
-import emCat2 from '../../assets/images/kanashi-3dejnak626k-unsplash.jpg'
-import emDog from '../../assets/images/jay-wennington-vXjNwYi2B8M-unsplash.jpg'
+import emCat2 from '../../assets/images/kanashi-3dejnak626k-unsplash.webp'
+import emDog from '../../assets/images/jay-wennington-vXjNwYi2B8M-unsplash.webp'
 
 export default function UrgentCareMessage() {
     return (
-        <section className="containers flex flex-col lg:flex-row lg:justify-between md:gap-8">
-            <div className="h-[23rem] lg:w-1/2 relative">
+        <section className="containers flex flex-col md:flex-row lg:justify-between md:gap-8">
+            <div className="h-[23rem] md:w-1/2 relative">
                 <img
                     src={emDog}
-                    alt="Cat sitting"
-                    className="md:hidden w-1/2 lg:w-1/2
-                    rounded-xl object-cover lg:block
-                    max-h-56 md:max-h-[300px] lg:max-h-[700px]
-                    absolute top-28 right-6 z-10 lg:right-10 lg:top-16"
+                    alt="Golden Doodle posing"
+                    className="w-1/2
+                    rounded-xl object-cover
+                    max-h-56 md:max-h-[23rem] lg:max-h-[520px]
+                    absolute top-28 right-6 md:right-10 md:top-16 lg:top-20 z-10"
                 />
                 <img
                     src={emCat2}
-                    alt="Cat sitting"
-                    className="w-1/2 md:w-full lg:w-1/2
+                    alt="Cat posing"
+                    className="w-1/2
                     rounded-xl object-cover
-                    max-h-56 md:max-h-[19rem] lg:max-h-[700px]
+                    max-h-56 md:max-h-[23rem] lg:max-h-[520px]
                     absolute left-6 md:left-0 lg:top-0"
                 />
             </div>
-            <div className="text-[#1A2954] lg:w-1/2">
+            <div className="text-[#1A2954] md:w-1/2">
                 <p className="font-dm text-4xl lg:text-6xl mb-4">
                     Emergency and urgent care walk-ins welcome
                 </p>
