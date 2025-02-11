@@ -40,11 +40,10 @@ export default function Nav() {
     }, [])
 
     return (
-        <nav
-            ref={navRef}
-            className={`sticky top-0 w-full z-50 bg-white transition-shadow ease-in-out duration-200 ${navBottomBorderShadow ? 'shadow-md' : ''}`}
-        >
-            <div className="relative py-3 bg-white">
+        <nav ref={navRef} className="sticky top-0 w-full z-50">
+            <div
+                className={`relative py-3 lg:py-5 bg-white transition-all ease-in-out duration-500 ${navBottomBorderShadow ? 'lg:bg-white shadow-md' : 'lg:bg-[#F5F3EF]'}`}
+            >
                 <div className="containers flex items-center justify-between">
                     {/* LOGO */}
                     <Link to="/" className="flex gap-1 font-jost">
