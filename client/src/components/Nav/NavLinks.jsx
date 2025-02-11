@@ -59,8 +59,6 @@ export default function NavLinks({ className, isMobile }) {
         }
     }
 
-    // console.log({ isTouchDevice, devicePixelRatio: window.devicePixelRatio })
-
     return (
         <ul ref={dropdownRef} className={className}>
             {navLinks.map((link, index) => {
@@ -70,7 +68,6 @@ export default function NavLinks({ className, isMobile }) {
                         className={`
                             flex justify-center hover:text-[#3F5E98] transition-colors duration-300 
                             ${!isMobile && link.hasDropdown ? 'relative hover:underline underline-offset-1' : ''}
-                            ${!isMobile && index === navLinks.length - 2 ? 'border-r border-[#CCCCCC] pr-8' : ''}
                         `}
                         onMouseEnter={() =>
                             !isTouchDevice &&
