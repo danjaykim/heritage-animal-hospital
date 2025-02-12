@@ -1,20 +1,20 @@
 import { Link } from 'react-router-dom'
-import testImg from '../../assets/images/test.png'
+import heroFrenchie from '../../assets/images/hero-frenchie.webp'
 import CtaButton from './CtaButton'
 
 export default function Hero() {
     return (
-        <main className="bg-[#F5F3EF] py-10 lg:py-16">
+        <main className="bg-[#F5F3EF] pt-8 md:pt-16 lg:pb-12">
             <div className="containers flex flex-col lg:flex-row justify-between">
-                <div className="hero-content lg:w-[60%] flex items-center">
+                <div className="hero-content lg:w-[60%] flex items-center mb-10">
                     <div className="flex flex-col gap-6 md:gap-8">
-                        <h1 className="font-dm text-[2.5rem] tracking-[-0.02rem] leading-none md:text-5xl lg:text-[3.75rem] text-[#1A2954]">
-                            Your trusted partner in pet health
+                        <h1 className="font-dm text-[2.5rem] tracking-[-0.02rem] leading-none md:text-5xl lg:text-[3.5rem] text-[#1A2954]">
+                            Your Trusted Partner in Pet Health
                             <span className="hidden md:inline">
-                                - caring for animals, big and small.
+                                - Caring for Animals, Big and Small.
                             </span>
                         </h1>
-                        <p className="text-[#1A2954] font-extralight tracking-wide leading-6 md:text-[1.1rem] lg:w-[60%]">
+                        <p className="text-[#1A2954] font-extralight tracking-wide leading-6 md:text-[1.1rem] w-3/4">
                             {/* Proudly serving expert care for{' '}
                             <span className="font-medium">small animals</span>{' '}
                             and <span className="font-medium">equine</span>{' '}
@@ -74,14 +74,14 @@ export default function Hero() {
                         <Link
                             to="/"
                             className="hidden md:inline-block md:w-fit text-[#1A2954] font-extralight 
-                    border-b border-[#405764] hover:text-[#3F5E98] transition-colors duration-200 leading-none"
+                            border-b border-[#405764] hover:text-[#3F5E98] transition-colors duration-200 leading-none"
                         >
                             Learn about our services
                         </Link>
                     </div>
                 </div>
                 <img
-                    src={testImg}
+                    src={heroFrenchie}
                     alt="French Bulldog Puppy"
                     className="md:mx-auto md:w-[75%] lg:w-[40%]"
                 />
