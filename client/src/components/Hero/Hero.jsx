@@ -35,7 +35,7 @@ export default function Hero() {
                         <Link
                             to="/"
                             className="hidden md:inline-block md:w-fit text-[#1A2954] font-extralight 
-                            border-b border-[#405764] hover:text-[#3F5E98] transition-colors duration-200 leading-none"
+                            border-b border-[#405764] hover:text-[#3F5E98] transition-colors duration-200 leading-none z-10"
                         >
                             Learn about our services
                         </Link>
@@ -44,7 +44,7 @@ export default function Hero() {
                 <img
                     src={heroFrenchie}
                     alt="French Bulldog Puppy"
-                    className="md:mx-auto md:w-[75%] lg:w-[40%]"
+                    className="md:mx-auto md:w-[75%] md:-mt-20 lg:w-[40%] lg:mt-0 z-0"
                 />
             </div>
         </main>
