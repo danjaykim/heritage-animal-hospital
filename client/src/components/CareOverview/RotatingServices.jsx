@@ -15,7 +15,7 @@ export default function RotatingServices() {
     })
 
     return (
-        <section className="containers flex flex-col items-center text-[2.5rem] md:text-[3.2rem] lg:text-7xl">
+        <section className="containers flex flex-col items-center text-[2.2rem] md:text-[3.2rem] lg:text-7xl">
             <h2 className="font-dm text-[#1A2954]">We provide care for</h2>
             <AnimatePresence mode="wait">
                 <motion.p
@@ -32,7 +32,7 @@ export default function RotatingServices() {
             </AnimatePresence>
             <Link
                 to="/services"
-                className="w-fit flex items-center gap-2 group text-[#1A2954] text-base md:mt-6"
+                className="w-fit flex items-center gap-2 group text-[#1A2954] text-base md:mt-1"
             >
                 <span>See all of our services</span>
                 <svg

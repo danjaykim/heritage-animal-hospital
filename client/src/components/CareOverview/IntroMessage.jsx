@@ -1,7 +1,7 @@
 export default function IntroMessage() {
     return (
         <section className="containers flex flex-col items-center gap-5 text-[#1A2954]">
-            <h2 className="font-dm self-start md:self-center text-[2.2rem] md:text-[2.7rem] lg:text-[3rem] leading-none md:leading-[2.5rem] lg:leading-[3rem]">
+            <h2 className="font-dm self-start md:self-center text-[2.1rem] md:text-[2.7rem] lg:text-[3rem] leading-none md:leading-[2.5rem] lg:leading-[3rem]">
                 Compassionate care
                 <span className="hidden lg:inline">
                     &nbsp;for your beloved pets
