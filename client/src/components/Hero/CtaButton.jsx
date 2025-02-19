@@ -10,8 +10,8 @@ export default function CtaButton({
         <Link
             to={to}
             className={`flex items-center gap-2 cursor-pointer group transition-all duration-200 
-            px-5 py-3 md:px-5 md:py-3 rounded-full
-            text-[#fff] bg-[#19535F] hover:bg-[#1E6C76] w-fit ${className}`}
+            px-6 py-3 md:px-5 md:py-3 rounded-full
+            text-[#fff] bg-[#19535F] hover:bg-[#1E6C76] w-[200px] ${className}`}
         >
             {children}
             {showArrowSvg && (

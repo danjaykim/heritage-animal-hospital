@@ -1,6 +1,7 @@
 import Hero from './Hero/Hero'
 import CareOverview from './LandingContent/CareOverview'
 import FacilityMessage from './LandingContent/FacilityMessage'
+import CtaSection from './LandingContent/CtaSection'
 
 export default function MainContent() {
     return (
@@ -8,6 +9,7 @@ export default function MainContent() {
             <Hero />
             <CareOverview />
             <FacilityMessage />
+            <CtaSection />
         </>
     )
 }
