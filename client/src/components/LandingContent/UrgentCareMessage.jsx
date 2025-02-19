@@ -29,11 +29,11 @@ export default function UrgentCareMessage() {
                     </p>
                     <p className="font-extralight lg:w-[90%]">
                         We understand that emergencies can happen at any time.
-                        That's why we gladly welcome walk-ins for urgent care
-                        and emergency services. Our dedicated team is here to
-                        provide compassionate and prompt attention to your pet's
-                        needs, ensuring they receive the best care possible,
-                        right when they need it most.
+                        That&apos;'s why we gladly welcome walk-ins for urgent
+                        care and emergency services. Our dedicated team is here
+                        to provide compassionate and prompt attention to your
+                        pet's needs, ensuring they receive the best care
+                        possible, right when they need it most.
                     </p>
                     <a
                         href="tel:+123"

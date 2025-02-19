@@ -11,7 +11,7 @@ export default function IntroVets() {
                         alt="Vet image placeholder"
                         className="w-[25%] rounded-full mb-8"
                     />
-                    <p className="lg:w-3/4 lg:text-center">
+                    <p className="lg:w-3/4 lg:text-center font-extralight">
                         Dr. Matthew Finney is a seasoned veterinarian
                         specializing in small animal care, as well as equine and
                         livestock medicine, offering professional and expert
@@ -24,7 +24,7 @@ export default function IntroVets() {
                         alt="Vet image placeholder"
                         className="w-[25%] rounded-full mb-8"
                     />
-                    <p className="lg:w-3/4 lg:text-center">
+                    <p className="lg:w-3/4 lg:text-center font-extralight">
                         Dr. Sarah Kim brings expertise and compassion to her
                         practice, combining years of experience with a deep love
                         for animals to ensure the best possible care for your
