@@ -14,13 +14,13 @@ export default function CtaSection() {
                     </span>
                 </h3>
                 <div className="flex flex-col md:flex-row items-center gap-3 md:gap-5">
-                    <CtaButton to="/" className="text-center md:px-6 md:py-4">
+                    <CtaButton to="/" className="text-center md:px-6 md:py-5">
                         Book an Appointment
                     </CtaButton>
                     <a
                         href="tel:+123"
                         className="w-[200px] cursor-pointer group transition-all duration-200 
-                        px-6 py-3 md:px-6 md:py-4 rounded-full text-center
+                        px-6 py-4 md:px-6 md:py-5 rounded-full text-center
                         text-[#fff] bg-[#19535F] hover:bg-[#1E6C76]"
                     >
                         Call us (123)123-1234

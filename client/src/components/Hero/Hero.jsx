@@ -28,7 +28,7 @@ export default function Hero() {
                         <CtaButton
                             to="/"
                             showArrowSvg={true}
-                            className="lg:hidden text-base"
+                            className="lg:hidden min-w-fit px-4 py-3"
                         >
                             <span>Book Appointment</span>
                         </CtaButton>
