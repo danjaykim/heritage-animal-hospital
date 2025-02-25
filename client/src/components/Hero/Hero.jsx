@@ -28,13 +28,13 @@ export default function Hero() {
                         <CtaButton
                             to="/"
                             showArrowSvg={true}
-                            className="lg:hidden min-w-fit px-4 py-3"
+                            className="lg:hidden text-[.9rem] w-fit px-5 py-3"
                         >
                             <span>Book Appointment</span>
                         </CtaButton>
                         <Link
                             to="/"
-                            className="hidden md:inline-block md:w-fit text-[#1A2954] font-light 
+                            className="hidden md:inline-block md:w-fit text-[#1A2954] font-extralight 
                             border-b border-[#405764] hover:text-[#3F5E98] transition-colors duration-200 leading-none z-10"
                         >
                             Learn about our services

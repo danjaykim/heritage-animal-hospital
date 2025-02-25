@@ -66,7 +66,7 @@ export default function NavLinks({ className, isMobile }) {
                     <li
                         key={index}
                         className={`
-                            flex justify-center hover:text-[#3F5E98] transition-colors duration-300 
+                            flex items-center justify-center hover:text-[#3F5E98] transition-colors duration-300 
                             ${!isMobile && link.hasDropdown ? 'relative hover:underline underline-offset-1' : ''}
                         `}
                         onMouseEnter={() =>
@@ -100,7 +100,7 @@ export default function NavLinks({ className, isMobile }) {
                                     width="12"
                                     height="12"
                                     viewBox="0 0 24 24"
-                                    className="inline-block ml-2 mb-1"
+                                    className="inline-block ml-2 mb-[.075rem]"
                                 >
                                     <path
                                         d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z"
@@ -124,7 +124,7 @@ export default function NavLinks({ className, isMobile }) {
                                     }
                                     variants={subMenuPulldown}
                                     className="subdropdown-menu absolute rounded top-full pointer-events-auto 
-                                    w-auto origin-top drop-shadow-md px-4 pb-4 pt-6 bg-white"
+                                    w-auto origin-top drop-shadow-md font-light px-4 pb-4 pt-6 bg-white"
                                 >
                                     <ul className="flex flex-col items-start text-[#1A2954]">
                                         {link.dropdownLinks.map(
@@ -133,7 +133,7 @@ export default function NavLinks({ className, isMobile }) {
                                                     <li key={subIndex}>
                                                         <NavLink
                                                             to={sublink.path}
-                                                            className="font-light whitespace-nowrap px-2 py-1 hover:text-[#3F5E98]"
+                                                            className="whitespace-nowrap hover:text-[#3F5E98]"
                                                         >
                                                             {sublink.title}{' '}
                                                         </NavLink>
