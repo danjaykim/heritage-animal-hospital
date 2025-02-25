@@ -97,12 +97,16 @@ export default function Nav() {
                     </div>
 
                     {/* DESKTOP NAV MENU/LINKS */}
-                    <div className="hidden text-[.9rem] lg:flex lg:gap-8">
+                    <div className="hidden text-[.85rem] lg:flex lg:gap-8">
                         <NavLinks
                             isMobile={isMobile}
                             className="lg:flex lg:gap-8 tracking-wide text-[#1A2954]"
                         />
-                        <CtaButton to="/" showArrowSvg={true}>
+                        <CtaButton
+                            to="/"
+                            showArrowSvg={true}
+                            className="px-6 py-4 md:px-5 md:py-3"
+                        >
                             <span>Book Appointment</span>
                         </CtaButton>
                     </div>

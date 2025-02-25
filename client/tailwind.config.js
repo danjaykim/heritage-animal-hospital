@@ -15,6 +15,7 @@ export default {
                 zain: ['Zain', 'sans-serif'],
                 dm: ['DM Serif', 'sans-serif'],
                 hind: ['Hind', 'sans-serif'],
+                inter: ['Inter', 'sans-serif'],
             },
         },
     },

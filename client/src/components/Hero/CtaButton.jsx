@@ -9,9 +9,8 @@ export default function CtaButton({
     return (
         <Link
             to={to}
-            className={`flex items-center gap-2 cursor-pointer group transition-all duration-200 
-            px-6 py-4 md:px-5 md:py-3 rounded-full
-            text-[#fff] bg-[#19535F] hover:bg-[#1E6C76] w-[200px] ${className}`}
+            className={`flex items-center justify-center gap-2 cursor-pointer group transition-all duration-200 
+            rounded-full text-[#fff] bg-[#19535F] hover:bg-[#1E6C76] ${className}`}
         >
             {children}
             {showArrowSvg && (

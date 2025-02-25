@@ -14,7 +14,7 @@ export default function Hero() {
                                 - Caring for Animals, Big and Small.
                             </span>
                         </h1>
-                        <p className="text-[#1A2954] font-extralight tracking-wide leading-6 md:text-[1.1rem] w-3/4">
+                        <p className="text-[#1A2954] font-light tracking-wide leading-6 md:text-[1.1rem] w-3/4">
                             {/* Proudly serving expert care for{' '}
                             <span className="font-medium">small animals</span>{' '}
                             and <span className="font-medium">equine</span>{' '}
@@ -34,7 +34,7 @@ export default function Hero() {
                         </CtaButton>
                         <Link
                             to="/"
-                            className="hidden md:inline-block md:w-fit text-[#1A2954] font-extralight 
+                            className="hidden md:inline-block md:w-fit text-[#1A2954] font-light 
                             border-b border-[#405764] hover:text-[#3F5E98] transition-colors duration-200 leading-none z-10"
                         >
                             Learn about our services

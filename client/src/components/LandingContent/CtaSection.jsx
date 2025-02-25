@@ -13,8 +13,11 @@ export default function CtaSection() {
                         Professional Pet Care
                     </span>
                 </h3>
-                <div className="flex flex-col md:flex-row items-center gap-3 md:gap-5">
-                    <CtaButton to="/" className="text-center md:px-6 md:py-5">
+                <div className="text-sm flex flex-col md:flex-row items-center gap-3 md:gap-5">
+                    <CtaButton
+                        to="/"
+                        className="w-[200px] text-center px-6 py-4 md:px-6 md:py-5"
+                    >
                         Book an Appointment
                     </CtaButton>
                     <a
