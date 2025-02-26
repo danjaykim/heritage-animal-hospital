@@ -34,7 +34,9 @@ export default function IntroServices() {
                         className="transform duration-300 ease-in-out group-hover:translate-x-1"
                     >
                         <path
-                            d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"
+                            d="M7.293 4.707 14.586 12l-7.293 
+                            7.293 1.414 1.414L17.414 12 8.707
+                            3.293 7.293 4.707z"
                             strokeWidth="2"
                             stroke="currentColor"
                         />
@@ -69,7 +71,9 @@ export default function IntroServices() {
                         className="transform duration-300 ease-in-out group-hover:translate-x-1"
                     >
                         <path
-                            d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"
+                            d="M7.293 4.707 14.586 12l-7.293
+                            7.293 1.414 1.414L17.414 12 8.707 
+                            3.293 7.293 4.707z"
                             strokeWidth="2"
                             stroke="currentColor"
                         />

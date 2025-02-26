@@ -66,7 +66,8 @@ export default function NavLinks({ className, isMobile }) {
                     <li
                         key={index}
                         className={`
-                            flex items-center justify-center hover:text-[#3F5E98] transition-colors duration-300 
+                            flex items-center justify-center 
+                            hover:text-[#3F5E98] transition-colors duration-300 
                             ${!isMobile && link.hasDropdown ? 'relative hover:underline underline-offset-1' : ''}
                         `}
                         onMouseEnter={() =>
@@ -103,7 +104,8 @@ export default function NavLinks({ className, isMobile }) {
                                     className="inline-block ml-2 mb-[.075rem]"
                                 >
                                     <path
-                                        d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z"
+                                        d="M12 17.414 3.293 8.707l1.414-1.414L12
+                                        14.586l7.293-7.293 1.414 1.414L12 17.414z"
                                         strokeWidth="2"
                                         stroke="currentColor"
                                     />
@@ -123,8 +125,10 @@ export default function NavLinks({ className, isMobile }) {
                                             : 'close'
                                     }
                                     variants={subMenuPulldown}
-                                    className="subdropdown-menu absolute rounded top-full pointer-events-auto 
-                                    w-auto origin-top drop-shadow-md font-light px-4 pb-4 pt-6 bg-white"
+                                    className="subdropdown-menu absolute 
+                                    rounded top-full pointer-events-auto 
+                                    w-auto origin-top drop-shadow-md 
+                                    font-light px-4 pb-4 pt-6 bg-white"
                                 >
                                     <ul className="flex flex-col items-start text-[#1A2954]">
                                         {link.dropdownLinks.map(

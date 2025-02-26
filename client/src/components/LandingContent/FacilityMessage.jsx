@@ -18,7 +18,10 @@ export default function FacilityMessage() {
                         to serve your pets in our new, cutting-edge facility!
                     </p>
                 </div>
-                <div className="h-[23rem] md:min-h-[23rem] lg:min-h-[30rem] xl:min-h-[35rem] md:w-1/2 relative mt-10 md:mt-0">
+                <div
+                    className="h-[23rem] md:min-h-[23rem] lg:min-h-[30rem]
+                    xl:min-h-[35rem] md:w-1/2 relative mt-10 md:mt-0"
+                >
                     <img
                         src={emDog}
                         alt="Golden Doodle posing"

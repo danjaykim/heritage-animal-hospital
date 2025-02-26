@@ -12,13 +12,16 @@ export default function Footer() {
                         alt="Heritage Animal Hospital Logo"
                         className="w-[65px] h-fit md:w-[80px]"
                     />
-                    <div className="grid grid-rows-2 grid-cols-2 md:grid-cols-4 md:grid-rows-none gap-8 lg:gap-12">
+                    <div
+                        className="grid grid-rows-2 grid-cols-2 
+                        md:grid-cols-4 md:grid-rows-none gap-8 lg:gap-12"
+                    >
                         {navLinks
                             .slice(0, navLinks.length - 1)
                             .map((link, index) => {
                                 return (
                                     <div key={index}>
-                                        <p className="font-semibold mb-2">
+                                        <p className="text-[#1A2954] font-semibold text-sm mb-2">
                                             {link.title}
                                         </p>
                                         {link.dropdownLinks.map(
@@ -27,7 +30,8 @@ export default function Footer() {
                                                     <Link
                                                         key={subIndex}
                                                         to={subLink.path}
-                                                        className="w-fit block"
+                                                        className="text-[#1A2954] hover:underline
+                                                        hover:underline-offset-4 w-fit block text-sm"
                                                     >
                                                         {subLink.title}
                                                     </Link>
@@ -38,15 +42,17 @@ export default function Footer() {
                                 )
                             })}
                         <div>
-                            <p className="font-semibold mb-2">Contact</p>
-                            <div>
+                            <p className="font-semibold text-sm mb-2">
+                                Contact
+                            </p>
+                            <div className="text-sm">
                                 <p>Phone</p>
                                 <p>Email</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <p className="mt-20">
+                <p className="text-sm mt-20">
                     © {new Date().getFullYear()} Heritage Animal Hospital. All
                     Rights Reserved.
                 </p>

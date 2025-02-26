@@ -8,7 +8,10 @@ export default function Hero() {
             <div className="containers flex flex-col lg:flex-row justify-between">
                 <div className="hero-content lg:w-[60%] flex items-center mb-10">
                     <div className="flex flex-col gap-6 md:gap-8">
-                        <h1 className="font-dm text-[2.5rem] tracking-[-0.02rem] leading-none md:text-5xl lg:text-[3.5rem] text-[#1A2954]">
+                        <h1
+                            className="font-dm text-[2.5rem] tracking-[-0.02rem] 
+                            leading-none md:text-5xl lg:text-[3.5rem] text-[#1A2954]"
+                        >
                             Your Trusted Partner in Pet Health&nbsp;
                             <span className="hidden md:inline">
                                 - Caring for Animals, Big and Small.
@@ -34,8 +37,9 @@ export default function Hero() {
                         </CtaButton>
                         <Link
                             to="/"
-                            className="hidden md:inline-block md:w-fit text-[#1A2954] font-extralight 
-                            border-b border-[#405764] hover:text-[#3F5E98] transition-colors duration-200 leading-none z-10"
+                            className="hidden md:inline-block md:w-fit text-[#1A2954]
+                            font-extralight border-b border-[#405764] hover:text-[#3F5E98] 
+                            transition-colors duration-200 leading-none z-10"
                         >
                             Learn about our services
                         </Link>

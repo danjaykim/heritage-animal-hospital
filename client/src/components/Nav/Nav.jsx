@@ -42,7 +42,8 @@ export default function Nav() {
     return (
         <nav ref={navRef} className="sticky top-0 w-full z-50">
             <div
-                className={`relative py-3 lg:py-5 bg-white transition-all ease-in-out duration-500 ${navBottomBorderShadow ? 'lg:bg-white shadow-md' : 'lg:bg-[#F5F3EF]'}`}
+                className={`relative py-3 lg:py-5 bg-white transition-all ease-in-out duration-500
+                ${navBottomBorderShadow ? 'lg:bg-white shadow-md' : 'lg:bg-[#F5F3EF]'}`}
             >
                 <div className="containers flex items-center justify-between">
                     {/* LOGO */}
@@ -56,7 +57,11 @@ export default function Nav() {
                             <span className="text-xl md:text-4xl font-medium">
                                 HERITAGE
                             </span>
-                            <span className="text-[.85rem] md:text-[.95rem] text-[#405764] md:tracking-wide -mt-[.5rem] md:-mt-2">
+                            <span
+                                className="text-[.85rem] md:text-[.95rem]
+                                text-[#405764] md:tracking-wide
+                                -mt-[.5rem] md:-mt-2"
+                            >
                                 Animal Hospital{' '}
                                 <span className="hidden md:inline">of NWA</span>
                             </span>
@@ -80,8 +85,10 @@ export default function Nav() {
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
                                     strokeWidth="2"
-                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 
-                                    11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498
+                                    4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 
+                                    11.042 0 005.516 5.516l1.13-2.257a1 1 0 
+                                    011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 
                                     01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                                 />
                             </svg>
