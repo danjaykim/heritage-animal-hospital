@@ -15,10 +15,10 @@ export default function IntroMessage() {
                     &nbsp;expert treatment in a comfortable, welcoming
                     environment.
                 </span>
-                <div className="hidden lg:block">
+                <span className="hidden lg:block">
                     expert treatment in a comfortable, welcoming environment.
                     See our veterinarians below.
-                </div>
+                </span>
             </p>
         </section>
     )
