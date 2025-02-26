@@ -14,7 +14,7 @@ export default function Hero() {
                                 - Caring for Animals, Big and Small.
                             </span>
                         </h1>
-                        <p className="text-[#1A2954] font-light tracking-wide leading-6 md:text-[1.1rem] w-3/4">
+                        <p className="text-[#1A2954] font-light leading-6 md:text-[1.1rem] w-3/4">
                             {/* Proudly serving expert care for{' '}
                             <span className="font-medium">small animals</span>{' '}
                             and <span className="font-medium">equine</span>{' '}

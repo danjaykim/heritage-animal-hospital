@@ -26,6 +26,7 @@ export default function FacilityMessage() {
                         rounded-xl object-cover
                         max-h-56 md:max-h-[23rem] lg:max-h-[520px]
                         absolute top-28 right-6 md:right-10 md:top-16 lg:top-20 z-10"
+                        loading="lazy"
                     />
                     <img
                         src={emCat2}
@@ -34,6 +35,7 @@ export default function FacilityMessage() {
                         rounded-xl object-cover
                         max-h-56 md:max-h-[23rem] lg:max-h-[520px]
                         absolute left-6 md:left-0 lg:top-0"
+                        loading="lazy"
                     />
                 </div>
             </div>

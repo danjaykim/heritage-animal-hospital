@@ -11,9 +11,10 @@ export default function IntroServices() {
                         src={catVet}
                         alt="Vet and cat illustration"
                         className="w-2/5 md:w-1/3"
+                        loading="lazy"
                     />
                 </div>
-                <p className="flex-1 font-light leading-6 lg:text-center lg:w-3/4">
+                <p className="flex-1 font-extralight leading-6 lg:text-center lg:w-3/4">
                     Our animal hospital provides expert care for small animals,
                     including routine exams, vaccinations, dental care, and
                     surgical procedures. We focus on personalized treatment to
@@ -46,9 +47,10 @@ export default function IntroServices() {
                         src={horseVet}
                         alt="Horse and vet illustration"
                         className="w-2/5 md:w-1/3"
+                        loading="lazy"
                     />
                 </div>
-                <p className="flex-1 font-light leading-6 lg:text-center lg:w-3/4">
+                <p className="flex-1 font-extralight leading-6 lg:text-center lg:w-3/4">
                     We offer specialized care for equine and livestock animals,
                     including emergency treatment, preventative care, and
                     reproductive health management. Our team is equipped to

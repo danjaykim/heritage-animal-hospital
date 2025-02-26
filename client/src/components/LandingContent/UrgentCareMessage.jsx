@@ -10,17 +10,19 @@ export default function UrgentCareMessage() {
                         src={emDog}
                         alt="Golden Doodle posing"
                         className="w-1/2
-                    rounded-xl object-cover
-                    max-h-56 md:max-h-[23rem] lg:max-h-[520px]
-                    absolute top-28 right-6 md:right-10 md:top-16 lg:top-20 z-10"
+                        rounded-xl object-cover
+                        max-h-56 md:max-h-[23rem] lg:max-h-[520px]
+                        absolute top-28 right-6 md:right-10 md:top-16 lg:top-20 z-10"
+                        loading="lazy"
                     />
                     <img
                         src={emCat2}
                         alt="Cat posing"
                         className="w-1/2
-                    rounded-xl object-cover
-                    max-h-56 md:max-h-[23rem] lg:max-h-[520px]
-                    absolute left-6 md:left-0 lg:top-0"
+                        rounded-xl object-cover
+                        max-h-56 md:max-h-[23rem] lg:max-h-[520px]
+                        absolute left-6 md:left-0 lg:top-0"
+                        loading="lazy"
                     />
                 </div>
                 <div className="flex flex-col lg:justify-center gap-4 lg:gap-8 text-[#1A2954] md:w-1/2 lg:mb-32">
