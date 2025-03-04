@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'motion/react'
 import Hamburger from 'hamburger-react'
 import NavLinks from './NavLinks'
@@ -12,6 +12,7 @@ export default function Nav() {
     const [isMobile, setIsMobile] = useState(false)
     const [navBottomBorderShadow, setNavBottomBorderShadow] = useState(false)
     const navRef = useRef(null)
+    const location = useLocation()
 
     useEffect(() => {
         const handleOutsideNavClick = (event) => {
@@ -43,11 +44,20 @@ export default function Nav() {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
+    const getNavBg = () => {
+        if (location.pathname === '/') {
+            return navBottomBorderShadow
+                ? 'lg:bg-white shadow-md'
+                : 'lg:bg-[#F5F3EF]'
+        }
+        return ''
+    }
+
     return (
         <nav ref={navRef} className="sticky top-0 w-full z-50">
             <div
-                className={`relative py-3 lg:py-5 bg-white transition-all ease-in-out duration-500
-                ${navBottomBorderShadow ? 'lg:bg-white shadow-md' : 'lg:bg-[#F5F3EF]'}`}
+                className={`relative py-3 lg:py-5 bg-white 
+                transition-all ease-in-out duration-500 ${getNavBg()}`}
             >
                 <div className="containers flex items-center justify-between">
                     {/* LOGO */}

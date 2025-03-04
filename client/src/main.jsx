@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import MainContent from './components/MainContent.jsx'
+import About from './components/About/About.jsx'
 
 import './assets/fonts/fonts.css'
 import './index.css'
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <MainContent />,
+            },
+            {
+                element: <About />,
+                path: '/about',
             },
         ],
     },
