@@ -15,7 +15,12 @@ export default function Nav() {
 
     useEffect(() => {
         const handleOutsideNavClick = (event) => {
-            if (navRef.current && !navRef.current.contains(event.target))
+            console.log(event)
+            if (
+                navRef.current &&
+                !navRef.current.contains(event.target) &&
+                event.clientX < window.innerWidth - 17
+            )
                 setIsMenuOpen(false)
         }
         document.addEventListener('mousedown', handleOutsideNavClick)
@@ -124,7 +129,7 @@ export default function Nav() {
                     initial="close"
                     animate={isMenuOpen ? 'open' : 'close'}
                     variants={menuPulldown}
-                    className="absolute -z-10 top-full w-full py-4 bg-white lg:hidden"
+                    className="absolute -z-10 top-full w-full py-8 bg-white shadow-md lg:hidden"
                 >
                     <NavLinks
                         isMobile={isMobile}

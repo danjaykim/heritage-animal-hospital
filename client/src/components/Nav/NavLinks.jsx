@@ -101,7 +101,7 @@ export default function NavLinks({ className, isMobile }) {
                                     width="12"
                                     height="12"
                                     viewBox="0 0 24 24"
-                                    className="inline-block ml-2 mb-[.075rem]"
+                                    className="inline-block ml-2"
                                 >
                                     <path
                                         d="M12 17.414 3.293 8.707l1.414-1.414L12
