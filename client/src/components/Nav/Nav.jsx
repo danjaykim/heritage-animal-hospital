@@ -15,7 +15,6 @@ export default function Nav() {
 
     useEffect(() => {
         const handleOutsideNavClick = (event) => {
-            console.log(event)
             if (
                 navRef.current &&
                 !navRef.current.contains(event.target) &&
