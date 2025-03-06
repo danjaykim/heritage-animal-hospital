@@ -8,7 +8,7 @@ export default function About() {
             <img
                 src={aboutHeader}
                 alt="Dogs playfully running"
-                className="w-full object-cover h-[20vh] md:h-[25vh] lg:h-[30vh]"
+                className="w-full object-cover h-[20vh] md:h-[20vh] lg:h-[30vh]"
             />
             <div className="containers my-8">
                 <div className="font-dm text-5xl text-[#1A2954] flex justify-center">
