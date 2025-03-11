@@ -15,7 +15,7 @@ export default function Team() {
                 every visit.
             </p>
             <div className="flex flex-col gap-10 md:gap-6 md:flex-row">
-                <div className="flex flex-col lg:items-center gap-3 md:gap-4 border-[.5px] rounded p-4 md:p-6 lg:p-8">
+                <div className="flex flex-col lg:items-center gap-3 md:gap-4 rounded p-4 md:p-6 lg:p-8 border-[1px] border-[#F0F2F2] bg-[#FAFCFE]">
                     <img
                         src={placeHolder}
                         alt="Vet image placeholder"
@@ -38,7 +38,7 @@ export default function Team() {
                         animal, ensuring their health and well-being.
                     </p>
                 </div>
-                <div className="flex flex-col lg:items-center gap-3 md:gap-4 border-[.5px] rounded p-4 md:p-6 lg:p-8">
+                <div className="flex flex-col lg:items-center gap-3 md:gap-4 rounded p-4 md:p-6 lg:p-8 border-[1px] border-[#F0F2F2] bg-[#FAFCFE]">
                     <img
                         src={placeHolder}
                         alt="Vet image placeholder"
