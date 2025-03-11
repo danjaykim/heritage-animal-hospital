@@ -13,7 +13,10 @@ export default function About() {
             <div className="containers my-10 md:my-16 lg:my-20 text-[#1A2954]">
                 <div className="font-dm text-4xl md:text-5xl flex flex-col justify-center items-center">
                     <h1>About Us</h1>
-                    <div className="w-[100px] md:w-[140px] h-[4px] md:h-[5px] bg-[#1A2954] mt-2 md:mt-4 lg:mt-6"></div>
+                    <div
+                        className="w-[100px] md:w-[140px] h-[4px] md:h-[5px] 
+                        bg-[#1A2954] mt-2 md:mt-4 lg:mt-6"
+                    ></div>
                 </div>
                 <Team />
                 <Mission />

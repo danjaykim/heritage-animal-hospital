@@ -4,7 +4,7 @@ import { navLinks } from './navLinkData'
 import { motion } from 'motion/react'
 import { subMenuPulldown } from '../../animations/animations'
 
-export default function NavLinks({ className, isMobile }) {
+export default function NavLinks({ className, isMobile, setIsMenuOpen }) {
     const [currentDropdown, setCurrentDropdown] = useState(null)
     const [isTouchDevice, setIsTouchDevice] = useState(false)
     const dropdownRef = useRef(null)
@@ -40,20 +40,11 @@ export default function NavLinks({ className, isMobile }) {
     // Large touch devices
     const handleDropdownClick = (event, index, hasDropdown) => {
         if (isTouchDevice && !isMobile && hasDropdown) {
-            // // if dropdown is already open, allow normal navigation path
-            // if (currentDropdown === index) return
-
-            // // prevent navigation and toggle dropdown menu
-            // event.preventDefault()
-            // setCurrentDropdown((prev) => (prev === index ? null : index))
-
-            // Prevent navigation on first click if dropdown is not already open
             if (currentDropdown !== index) {
                 event.preventDefault()
                 setCurrentDropdown(index)
                 return
             }
-
             // If dropdown is already open, allow normal navigation path
             setCurrentDropdown(null)
         }
@@ -85,13 +76,14 @@ export default function NavLinks({ className, isMobile }) {
                     >
                         <NavLink
                             to={link.path}
-                            onClick={(event) =>
+                            onClick={(event) => {
+                                setIsMenuOpen(false)
                                 handleDropdownClick(
                                     event,
                                     index,
                                     link.hasDropdown
                                 )
-                            }
+                            }}
                             className="flex items-center"
                         >
                             {link.title}

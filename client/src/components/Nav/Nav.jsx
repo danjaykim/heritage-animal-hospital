@@ -142,6 +142,7 @@ export default function Nav() {
                 >
                     <NavLinks
                         isMobile={isMobile}
+                        setIsMenuOpen={setIsMenuOpen}
                         className="containers flex flex-col items-center gap-3 text-[#1A2954]"
                     />
                 </motion.div>
