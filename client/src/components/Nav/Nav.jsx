@@ -44,11 +44,9 @@ export default function Nav() {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
-    const getNavBg = () => {
+    const getNavLandingBg = () => {
         if (location.pathname === '/') {
-            return navBottomBorderShadow
-                ? 'lg:bg-white shadow-md'
-                : 'lg:bg-[#F5F3EF]'
+            return navBottomBorderShadow ? 'lg:bg-white' : 'lg:bg-[#F5F3EF]'
         }
         return ''
     }
@@ -57,7 +55,9 @@ export default function Nav() {
         <nav ref={navRef} className="sticky top-0 w-full z-50">
             <div
                 className={`relative py-3 lg:py-5 bg-white 
-                transition-all ease-in-out duration-500 ${getNavBg()}`}
+                transition-all ease-in-out duration-500 
+                ${navBottomBorderShadow ? 'shadow-md' : ''} 
+                ${getNavLandingBg()}`}
             >
                 <div className="containers flex items-center justify-between">
                     {/* LOGO */}
