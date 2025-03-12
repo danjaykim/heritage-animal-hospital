@@ -16,6 +16,8 @@ export default {
                 dm: ['DM Serif', 'sans-serif'],
                 hind: ['Hind', 'sans-serif'],
                 inter: ['Inter', 'sans-serif'],
+                //
+                nyght: ['Nyght Serif', 'sans-serif'],
             },
         },
     },

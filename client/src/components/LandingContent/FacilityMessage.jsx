@@ -6,7 +6,7 @@ export default function FacilityMessage() {
         <section className="bg-[#F5F3EF] w-full pb-[1rem] md:pb-[3.5rem] lg:pb-[3rem] xl:pb-[6.5rem]">
             <div className="containers flex flex-col md:flex-row lg:justify-between md:gap-8">
                 <div className="flex flex-col lg:justify-center gap-4 lg:gap-8 text-[#1A2954] md:w-1/2 lg:mb-32">
-                    <p className="font-dm text-4xl lg:text-5xl lg:w-[90%]">
+                    <p className="font-nyght tracking-[0.02rem] text-4xl lg:text-5xl lg:w-[90%]">
                         Our Facility
                     </p>
                     <p className="font-extralight lg:w-[90%]">

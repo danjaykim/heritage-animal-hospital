@@ -19,7 +19,9 @@ export default function RotatingServices() {
             className="containers flex flex-col items-center 
             text-[2.2rem] md:text-[3.2rem] lg:text-7xl"
         >
-            <h2 className="font-dm text-[#1A2954]">We provide care for</h2>
+            <h2 className="font-nyght font-medium tracking-wide text-[#1A2954]">
+                We provide care for
+            </h2>
             <AnimatePresence mode="wait">
                 <motion.p
                     key={rotatingServices[currServiceIndex]}
@@ -28,7 +30,7 @@ export default function RotatingServices() {
                     animate="animate"
                     exit="exit"
                     transition={{ duration: 0.5 }}
-                    className="font-dm text-[#3F5E98] lg:mt-1 text-center 
+                    className="font-nyght font-medium tracking-wide text-[#3F5E98] lg:mt-1 text-center 
                     leading-tight min-h-[7rem]"
                 >
                     {rotatingServices[currServiceIndex]}

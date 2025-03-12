@@ -5,7 +5,7 @@ export default function CtaSection() {
         <section className="py-14 md:py-24 lg:py-28">
             <div className="containers flex flex-col items-center">
                 <h3
-                    className="font-dm text-[#1A2954] text-center 
+                    className="font-nyght font-medium text-[#1A2954] text-center 
                     text-[1.8rem] md:text-[2.3rem] lg:text-[3rem] 
                     leading-[2.2rem] md:leading-[2.8rem] 
                     lg:leading-[3.5rem] mb-7 md:mb-8 lg:mb-12"

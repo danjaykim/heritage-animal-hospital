@@ -115,3 +115,32 @@
     src: url('../fonts/Inter/Inter-VariableFont_opsz,wght.ttf')
         format('truetype');
 }
+
+/*  */
+
+@font-face {
+    font-family: 'Nyght Serif';
+    font-weight: 200;
+    font-style: normal;
+    src: url('../fonts/nyght_serif/fonts/OTF/NyghtSerif-Light.otf');
+}
+@font-face {
+    font-family: 'Nyght Serif';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/nyght_serif/fonts/OTF/NyghtSerif-Regular.otf');
+}
+@font-face {
+    font-family: 'Nyght Serif';
+    font-weight: 500;
+    font-style: normal;
+    src: url('../fonts/nyght_serif/fonts/OTF/NyghtSerif-Medium.otf');
+}
+@font-face {
+    font-family: 'Nyght Serif';
+    font-weight: 700;
+    font-style: normal;
+    src: url('../fonts/nyght_serif/fonts/OTF/NyghtSerif-Bold.otf');
+}
+
+/*  */

@@ -24,7 +24,7 @@ export default function Team() {
                         alt="Vet image placeholder"
                         className="lg:w-1/2 mb-4"
                     />
-                    <h3 className="font-dm text-3xl">Dr. Matthew Finney</h3>
+                    <h3 className="font-nyght text-3xl">Dr. Matthew Finney</h3>
                     <p className="font-zain font-bold text-2xl tracking-wide">
                         DVM
                     </p>
@@ -50,7 +50,9 @@ export default function Team() {
                         alt="Vet image placeholder"
                         className="lg:w-1/2 mb-4"
                     />
-                    <h3 className="font-dm text-3xl">Dr. Sarah Kim Finney</h3>
+                    <h3 className="font-nyght text-3xl">
+                        Dr. Sarah Kim Finney
+                    </h3>
                     <p className="font-zain font-bold text-2xl tracking-wide">
                         DVM
                     </p>
