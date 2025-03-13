@@ -109,16 +109,9 @@
 
 @font-face {
     font-family: 'Jost';
-    font-weight: 300;
+    font-weight: 100 900;
     font-style: normal;
-    src: url('../fonts/Jost/static/Jost-Light.ttf');
-}
-
-@font-face {
-    font-family: 'Jost';
-    font-weight: 400;
-    font-style: normal;
-    src: url('../fonts/Jost/static/Jost-Regular.ttf');
+    src: url('../fonts/Jost/Jost-VariableFont_wght.ttf');
 }
 
 /* Headings */

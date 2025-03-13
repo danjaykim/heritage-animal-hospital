@@ -10,7 +10,7 @@ export default function Footer() {
                     <img
                         src={logo}
                         alt="Heritage Animal Hospital Logo"
-                        className="w-[65px] h-fit md:w-[80px]"
+                        className="w-[65px] md:w-[80px]"
                     />
                     <div
                         className="grid grid-rows-2 grid-cols-2 
