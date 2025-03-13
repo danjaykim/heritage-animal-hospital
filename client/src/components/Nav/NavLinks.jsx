@@ -9,6 +9,8 @@ export default function NavLinks({ className, isMobile, setIsMenuOpen }) {
     const [isTouchDevice, setIsTouchDevice] = useState(false)
     const dropdownRef = useRef(null)
 
+    console.log(currentDropdown)
+
     useEffect(() => {
         const checkIfTouchDevice = () => {
             const touchDevice =
@@ -128,6 +130,11 @@ export default function NavLinks({ className, isMobile, setIsMenuOpen }) {
                                                 return (
                                                     <li key={subIndex}>
                                                         <NavLink
+                                                            onClick={() => {
+                                                                setCurrentDropdown(
+                                                                    null
+                                                                )
+                                                            }}
                                                             to={sublink.path}
                                                             className="whitespace-nowrap hover:text-[#3F5E98]"
                                                         >
