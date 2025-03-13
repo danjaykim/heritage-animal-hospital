@@ -1,26 +1,62 @@
-/* Cal Sans (Headings) */
+/* Headings */
 
 @font-face {
-    font-family: 'Cal Sans';
-    font-weight: 600;
+    font-family: 'Nyght Serif';
+    font-weight: 200;
     font-style: normal;
-    src: url('../fonts/cal_sans/fonts/otf/CalSans-SemiBold.otf');
+    src:
+        url('../fonts/nyght_serif/fonts/WEB/NyghtSerif-Light.woff2')
+            format('woff2'),
+        url('../fonts/nyght_serif/fonts/WEB/NyghtSerif-Light.woff')
+            format('woff');
 }
-
-/* Jost (Logo Font) */
-
 @font-face {
-    font-family: 'Jost';
-    font-weight: 300;
-    font-style: normal;
-    src: url('../fonts/Jost/static/Jost-Light.ttf');
-}
-
-@font-face {
-    font-family: 'Jost';
+    font-family: 'Nyght Serif';
     font-weight: 400;
     font-style: normal;
-    src: url('../fonts/Jost/static/Jost-Regular.ttf');
+    src:
+        url('../fonts/nyght_serif/fonts/WEB/NyghtSerif-Regular.woff2')
+            format('woff2'),
+        url('../fonts/nyght_serif/fonts/WEB/NyghtSerif-Regular.woff')
+            format('woff');
+}
+@font-face {
+    font-family: 'Nyght Serif';
+    font-weight: 500;
+    font-style: normal;
+    src:
+        url('../fonts/nyght_serif/fonts/WEB/NyghtSerif-Medium.woff2')
+            format('woff2'),
+        url('../fonts/nyght_serif/fonts/WEB/NyghtSerif-Medium.woff')
+            format('woff');
+}
+@font-face {
+    font-family: 'Nyght Serif';
+    font-weight: 700;
+    font-style: normal;
+    src:
+        url('../fonts/nyght_serif/fonts/WEB/NyghtSerif-Bold.woff2')
+            format('woff2'),
+        url('../fonts/nyght_serif/fonts/WEB/NyghtSerif-Bold.woff')
+            format('woff');
+}
+
+/* Body */
+
+@font-face {
+    font-family: 'Leggibilmente';
+    font-weight: 100 900;
+    font-style: normal;
+    src: url('../fonts/leggibilmente/variable/Leggibilmente.woff2')
+        format('woff2');
+}
+
+@font-face {
+    font-family: 'Reddit Sans';
+    font-weight: 100 900;
+    font-style: normal;
+    src: url('../fonts/Reddit_Sans/RedditSans-VariableFont_wght.ttf')
+        format('truetype');
 }
 
 @font-face {
@@ -44,31 +80,45 @@
     src: url('../fonts/Jost/static/Jost-Bold.ttf');
 }
 
-/* Zain (Content) */
-
 @font-face {
     font-family: 'Zain';
     font-weight: 200;
-    font-display: swap;
+    font-style: normal;
     src: url('../fonts/zain/Fonts/TTF/Zain-ExtraLight.ttf');
 }
 @font-face {
     font-family: 'Zain';
     font-weight: 300;
-    font-display: swap;
+    font-style: normal;
     src: url('../fonts/zain/Fonts/TTF/Zain-Light.ttf');
 }
 @font-face {
     font-family: 'Zain';
     font-weight: 400;
-    font-display: swap;
+    font-style: normal;
     src: url('../fonts/zain/Fonts/TTF/Zain-Regular.ttf');
 }
 @font-face {
     font-family: 'Zain';
     font-weight: 600;
-    font-display: swap;
+    font-style: normal;
     src: url('../fonts/zain/Fonts/TTF/Zain-Bold.ttf');
+}
+
+/* Logo */
+
+@font-face {
+    font-family: 'Jost';
+    font-weight: 300;
+    font-style: normal;
+    src: url('../fonts/Jost/static/Jost-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Jost';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/Jost/static/Jost-Regular.ttf');
 }
 
 /* Headings */
@@ -78,69 +128,3 @@
     font-style: normal;
     src: url('../fonts/DM_Serif_Text/DMSerifText-Regular.ttf');
 }
-
-/*  */
-
-@font-face {
-    font-family: 'Hind';
-    font-weight: 200;
-    font-style: normal;
-    src: url('../fonts/Hind_Complete/Fonts/OTF/Hind-Light.otf');
-}
-@font-face {
-    font-family: 'Hind';
-    font-weight: 400;
-    font-style: normal;
-    src: url('../fonts/Hind_Complete/Fonts/OTF/Hind-Regular.otf');
-}
-@font-face {
-    font-family: 'Hind';
-    font-weight: 500;
-    font-style: normal;
-    src: url('../fonts/Hind_Complete/Fonts/OTF/Hind-Medium.otf');
-}
-@font-face {
-    font-family: 'Hind';
-    font-weight: 500;
-    font-style: normal;
-    src: url('../fonts/Hind_Complete/Fonts/OTF/Hind-SemiBold.otf');
-}
-
-/*  */
-
-@font-face {
-    font-family: 'Inter';
-    font-weight: 100 900;
-    font-style: normal;
-    src: url('../fonts/Inter/Inter-VariableFont_opsz,wght.ttf')
-        format('truetype');
-}
-
-/*  */
-
-@font-face {
-    font-family: 'Nyght Serif';
-    font-weight: 200;
-    font-style: normal;
-    src: url('../fonts/nyght_serif/fonts/OTF/NyghtSerif-Light.otf');
-}
-@font-face {
-    font-family: 'Nyght Serif';
-    font-weight: 400;
-    font-style: normal;
-    src: url('../fonts/nyght_serif/fonts/OTF/NyghtSerif-Regular.otf');
-}
-@font-face {
-    font-family: 'Nyght Serif';
-    font-weight: 500;
-    font-style: normal;
-    src: url('../fonts/nyght_serif/fonts/OTF/NyghtSerif-Medium.otf');
-}
-@font-face {
-    font-family: 'Nyght Serif';
-    font-weight: 700;
-    font-style: normal;
-    src: url('../fonts/nyght_serif/fonts/OTF/NyghtSerif-Bold.otf');
-}
-
-/*  */

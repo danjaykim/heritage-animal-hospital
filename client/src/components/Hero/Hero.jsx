@@ -7,7 +7,7 @@ export default function Hero() {
         <main className="bg-[#F5F3EF] pt-8 md:pt-16 lg:pb-12">
             <div className="containers flex flex-col lg:flex-row justify-between">
                 <div className="hero-content lg:w-[60%] flex items-center mb-10">
-                    <div className="flex flex-col gap-6 md:gap-8">
+                    <div className="flex flex-col gap-6 md:gap-8 lg:gap-12">
                         <h1
                             className="font-nyght text-[2.5rem] tracking-wide
                             leading-none md:text-5xl lg:text-[3.5rem] text-[#1A2954]"
@@ -17,7 +17,7 @@ export default function Hero() {
                                 - Caring for Animals, Big and Small.
                             </span>
                         </h1>
-                        <p className="text-[#1A2954] font-light leading-6 md:text-[1.1rem] w-3/4">
+                        <p className="text-[#1A2954] leading-6 md:text-[1.1rem] w-3/4">
                             {/* Proudly serving expert care for{' '}
                             <span className="font-medium">small animals</span>{' '}
                             and <span className="font-medium">equine</span>{' '}
