@@ -121,14 +121,16 @@ export default function Nav() {
                     <div className="hidden text-[.85rem] lg:flex lg:gap-8">
                         <NavLinks
                             isMobile={isMobile}
-                            className="lg:flex lg:gap-8 tracking-wide text-[#1A2954]"
+                            className="lg:flex lg:gap-8 font-medium tracking-wide text-[#1A2954]"
                         />
                         <CtaButton
                             to="/"
                             showArrowSvg={true}
-                            className="px-6 py-4 md:px-5 md:py-3"
+                            className="md:px-5 md:py-3"
                         >
-                            <span>Book Appointment</span>
+                            <span className="font-medium">
+                                Book Appointment
+                            </span>
                         </CtaButton>
                     </div>
                 </div>

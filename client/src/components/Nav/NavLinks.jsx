@@ -77,7 +77,7 @@ export default function NavLinks({ className, isMobile, setIsMenuOpen }) {
                         <NavLink
                             to={link.path}
                             onClick={(event) => {
-                                setIsMenuOpen(false)
+                                isMobile && setIsMenuOpen(false)
                                 handleDropdownClick(
                                     event,
                                     index,

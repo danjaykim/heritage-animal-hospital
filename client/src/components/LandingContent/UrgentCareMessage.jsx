@@ -39,7 +39,7 @@ export default function UrgentCareMessage() {
                     className="flex flex-col lg:justify-center 
                     gap-4 lg:gap-8 text-[#1A2954] md:w-1/2 lg:mb-32"
                 >
-                    <p className="font-nyght tracking-[0.02rem] text-4xl lg:text-5xl lg:w-[90%]">
+                    <p className="font-nyght font-medium md:font-normal tracking-[0.02rem] text-4xl lg:text-5xl lg:w-[90%]">
                         Emergency and urgent care walk-ins welcome
                     </p>
                     <p className="font-extralight lg:w-[90%]">
