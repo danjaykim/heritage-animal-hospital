@@ -5,8 +5,8 @@ export default function Team() {
     return (
         <div className="py-12 md:py-16 lg:py-20 flex flex-col items-center gap-2">
             <HeartPulse className="w-12 h-12 text-[#1A2954]" />
-            <h2 className="font-zain font-extrabold text-xl md:text-2xl tracking-wider">
-                OUR TEAM
+            <h2 className="font-nyght font-semibold text-xl md:text-2xl tracking-wider">
+                Our Team
             </h2>
             <p className="font-light mt-4 mb-12 md:text-center md:w-[75%] lg:w-1/2">
                 Our doctors are dedicated to providing the highest level of care
@@ -25,7 +25,7 @@ export default function Team() {
                         className="lg:w-1/2 mb-4"
                     />
                     <h3 className="font-nyght text-3xl">Dr. Matthew Finney</h3>
-                    <p className="font-zain font-bold text-2xl tracking-wide">
+                    <p className="font-nyght font-bold text-xl tracking-widest">
                         DVM
                     </p>
                     <p className="font-light">
@@ -53,7 +53,7 @@ export default function Team() {
                     <h3 className="font-nyght text-3xl">
                         Dr. Sarah Kim Finney
                     </h3>
-                    <p className="font-zain font-bold text-2xl tracking-wide">
+                    <p className="font-nyght font-bold text-xl tracking-widest">
                         DVM
                     </p>
                     <p className="font-light">

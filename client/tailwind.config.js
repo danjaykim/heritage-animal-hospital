@@ -13,6 +13,7 @@ export default {
                 nyght: ['Nyght Serif', 'sans-serif'],
                 dm: ['DM Serif', 'sans-serif'],
                 //
+                bri: ['Bricolage Grotesque', 'sans-serif'],
                 leggi: ['Leggibilmente', 'sans-serif'],
                 re: ['Reddit Sans', 'sans-serif'],
                 zain: ['Zain', 'sans-serif'],

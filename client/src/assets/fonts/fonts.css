@@ -41,7 +41,22 @@
             format('woff');
 }
 
+@font-face {
+    font-family: 'DM Serif';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/DM_Serif_Text/DMSerifText-Regular.ttf');
+}
+
 /* Body */
+
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    font-weight: 100 900;
+    font-style: normal;
+    src: url('../fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf')
+        format('truetype');
+}
 
 @font-face {
     font-family: 'Leggibilmente';
@@ -57,27 +72,6 @@
     font-style: normal;
     src: url('../fonts/Reddit_Sans/RedditSans-VariableFont_wght.ttf')
         format('truetype');
-}
-
-@font-face {
-    font-family: 'Jost';
-    font-weight: 500;
-    font-style: normal;
-    src: url('../fonts/Jost/static/Jost-Medium.ttf');
-}
-
-@font-face {
-    font-family: 'Jost';
-    font-weight: 600;
-    font-style: normal;
-    src: url('../fonts/Jost/static/Jost-Semibold.ttf');
-}
-
-@font-face {
-    font-family: 'Jost';
-    font-weight: 700;
-    font-style: normal;
-    src: url('../fonts/Jost/static/Jost-Bold.ttf');
 }
 
 @font-face {
@@ -111,13 +105,5 @@
     font-family: 'Jost';
     font-weight: 100 900;
     font-style: normal;
-    src: url('../fonts/Jost/Jost-VariableFont_wght.ttf');
-}
-
-/* Headings */
-@font-face {
-    font-family: 'DM Serif';
-    font-weight: 400;
-    font-style: normal;
-    src: url('../fonts/DM_Serif_Text/DMSerifText-Regular.ttf');
+    src: url('../fonts/Jost/Jost-VariableFont_wght.ttf') format('truetype');
 }

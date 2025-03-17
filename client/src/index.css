@@ -12,7 +12,7 @@
 
 body {
     /* @apply font-hind; */
-    @apply font-leggi;
+    @apply font-bri;
 }
 
 .containers {
