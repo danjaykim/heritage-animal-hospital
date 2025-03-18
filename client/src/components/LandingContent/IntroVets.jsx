@@ -33,7 +33,10 @@ export default function IntroVets() {
                 </div>
             </div>
             <div className="flex justify-center">
-                <Link to="/" className="w-fit flex items-center gap-2 group">
+                <Link
+                    to="/about#our-team"
+                    className="w-fit flex items-center gap-2 group"
+                >
                     <span>Read more about our team</span>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

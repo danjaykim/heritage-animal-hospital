@@ -9,8 +9,6 @@ export default function NavLinks({ className, isMobile, setIsMenuOpen }) {
     const [isTouchDevice, setIsTouchDevice] = useState(false)
     const dropdownRef = useRef(null)
 
-    console.log(currentDropdown)
-
     useEffect(() => {
         const checkIfTouchDevice = () => {
             const touchDevice =

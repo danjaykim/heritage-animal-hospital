@@ -1,11 +1,16 @@
+import { forwardRef } from 'react'
 import HeartPulse from '../../assets/images/svg/heart-pulse.svg?react'
 import placeHolder from '../../assets/images/avatar-placeholder.jpg'
 
-export default function Team() {
+const Team = forwardRef((props, ref) => {
     return (
-        <div className="py-12 md:py-16 lg:py-20 flex flex-col items-center gap-2">
+        <div
+            ref={ref}
+            id="our-team"
+            className="py-12 md:py-16 lg:py-20 flex flex-col items-center gap-2 scroll-m-16"
+        >
             <HeartPulse className="w-12 h-12 text-[#1A2954]" />
-            <h2 className="font-nyght font-semibold text-xl md:text-2xl tracking-wider">
+            <h2 className="font-nyght font-medium text-xl md:text-2xl tracking-wider">
                 Our Team
             </h2>
             <p className="font-light mt-4 mb-12 md:text-center md:w-[75%] lg:w-1/2">
@@ -72,4 +77,7 @@ export default function Team() {
             </div>
         </div>
     )
-}
+})
+
+Team.displayName = 'Team'
+export default Team

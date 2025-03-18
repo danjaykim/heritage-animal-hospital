@@ -1,8 +1,20 @@
+import { useEffect, useRef } from 'react'
+import { useLocation } from 'react-router-dom'
 import Mission from './Mission'
 import Team from './Team'
 import aboutHeader from '../../assets/images/about-header.webp'
 
 export default function About() {
+    const teamRef = useRef(null)
+    // const missionRef = useRef(null)
+    const { hash } = useLocation()
+
+    useEffect(() => {
+        if (hash === '#our-team' && teamRef.current) {
+            teamRef.current.scrollIntoView({ behavior: 'smooth' })
+        }
+    }, [hash])
+
     return (
         <section>
             <img
@@ -18,7 +30,7 @@ export default function About() {
                         bg-[#1A2954] mt-2 md:mt-4 lg:mt-6"
                     ></div>
                 </div>
-                <Team />
+                <Team ref={teamRef} />
                 <Mission />
             </div>
         </section>
