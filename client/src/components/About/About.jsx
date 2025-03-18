@@ -6,12 +6,14 @@ import aboutHeader from '../../assets/images/about-header.webp'
 
 export default function About() {
     const teamRef = useRef(null)
-    // const missionRef = useRef(null)
+    const missionRef = useRef(null)
     const { hash } = useLocation()
 
     useEffect(() => {
         if (hash === '#our-team' && teamRef.current) {
             teamRef.current.scrollIntoView({ behavior: 'smooth' })
+        } else if (hash === '#our-mission' && missionRef.current) {
+            missionRef.current.scrollIntoView({ behavior: 'smooth' })
         }
     }, [hash])
 
@@ -23,7 +25,11 @@ export default function About() {
                 className="w-full object-cover h-[20vh] md:h-[20vh] lg:h-[30vh]"
             />
             <div className="containers my-10 md:my-16 lg:my-20 text-[#1A2954]">
-                <div className="font-nyght font-medium tracking-wider text-4xl md:text-5xl flex flex-col justify-center items-center">
+                <div
+                    className="font-nyght font-medium tracking-wider 
+                    text-4xl md:text-5xl flex flex-col justify-center 
+                    items-center"
+                >
                     <h1>about us</h1>
                     <div
                         className="w-[100px] md:w-[140px] h-[2px] 
@@ -31,7 +37,7 @@ export default function About() {
                     ></div>
                 </div>
                 <Team ref={teamRef} />
-                <Mission />
+                <Mission ref={missionRef} />
             </div>
         </section>
     )
