@@ -9,7 +9,11 @@ const Mission = forwardRef((props, ref) => {
             className="border-4 mt-14 lg:mt-20 py-12 md:py-16 lg:py-20 
             flex flex-col items-center gap-2 scroll-m-16"
         >
-            <ShieldPlus className="w-12 h-12 text-[#1A2954]" />
+            <div className="icon-div w-full max-w-[650px] flex items-center justify-center gap-2">
+                <div className="line flex-grow h-[2px] bg-[#6A7AA4]" />
+                <ShieldPlus className="w-12 h-12 text-[#1A2954]" />
+                <div className="line flex-grow h-[2px] bg-[#6A7AA4]" />
+            </div>
             <h2 className="font-nyght font-medium text-xl md:text-2xl tracking-wider">
                 Our Mission
             </h2>
@@ -29,8 +33,8 @@ const Mission = forwardRef((props, ref) => {
                 Through client education, state-of-the-art treatments, and a
                 commitment to personalized care, we strive to empower pet owners
                 and enhance the lives of the animals they love. Our goal is to
-                be more than a veterinary clinic—we aim to be a trusted partner
-                in your pet&apos;s lifelong health and happiness.
+                be more than a veterinary clinic — we aim to be a trusted
+                partner in your pet&apos;s lifelong health and happiness.
             </p>
         </div>
     )
