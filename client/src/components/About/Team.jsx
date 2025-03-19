@@ -7,7 +7,7 @@ const Team = forwardRef((props, ref) => {
         <div
             ref={ref}
             id="our-team"
-            className="py-12 md:py-16 lg:py-20 flex flex-col items-center gap-2 scroll-m-16"
+            className="py-4 flex flex-col items-center gap-2 scroll-m-24 md:scroll-m-32"
         >
             <div className="icon-div w-full max-w-[650px] flex items-center justify-center gap-2">
                 <div className="line flex-grow h-[2px] bg-[#6A7AA4]" />
@@ -15,9 +15,12 @@ const Team = forwardRef((props, ref) => {
                 <div className="line flex-grow h-[2px] bg-[#6A7AA4]" />
             </div>
             <h2 className="font-nyght font-medium text-xl md:text-2xl tracking-wider">
-                Our Team
+                Our
             </h2>
-            <p className="font-light mt-4 mb-12 md:text-center md:w-[75%] lg:w-1/2">
+            <h2 className="font-nyght font-medium text-3xl md:text-4xl tracking-wider -mt-3">
+                Team
+            </h2>
+            <p className="font-light mt-10 mb-12 md:text-center md:w-[75%] lg:w-1/2">
                 Our doctors are dedicated to providing the highest level of care
                 for your pets. Passionate for animal health, they work together
                 to ensure your pet receives personalized, attentive treatment

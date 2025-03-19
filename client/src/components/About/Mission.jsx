@@ -6,7 +6,7 @@ const Mission = forwardRef((props, ref) => {
         <div
             ref={ref}
             id="our-mission"
-            className="border-4 mt-14 lg:mt-20 py-12 md:py-16 lg:py-20 
+            className="mt-14 lg:mt-20 py-12 md:py-16 lg:py-20 
             flex flex-col items-center gap-2 scroll-m-16"
         >
             <div className="icon-div w-full max-w-[650px] flex items-center justify-center gap-2">
@@ -15,9 +15,12 @@ const Mission = forwardRef((props, ref) => {
                 <div className="line flex-grow h-[2px] bg-[#6A7AA4]" />
             </div>
             <h2 className="font-nyght font-medium text-xl md:text-2xl tracking-wider">
-                Our Mission
+                Our
             </h2>
-            <p className="font-medium mt-4 mb-2 md:text-center md:w-[75%] lg:w-1/2">
+            <h2 className="font-nyght font-medium text-3xl md:text-4xl tracking-wider -mt-3">
+                Mission
+            </h2>
+            <p className="font-medium mt-10 mb-2 md:text-center md:w-[75%] lg:w-1/2">
                 At Heritage Animal Hospital, our mission is simple yet profound:
                 to provide compassionate, high-quality veterinary care that
                 strengthens the bond between pets and their families.
