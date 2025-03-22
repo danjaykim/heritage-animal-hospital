@@ -9,7 +9,7 @@ const Team = forwardRef((props, ref) => {
             id="our-team"
             className="py-4 flex flex-col items-center gap-2 scroll-m-24 md:scroll-m-32"
         >
-            <div className="icon-div w-full max-w-[650px] flex items-center justify-center gap-2">
+            <div className="icon-div w-full max-w-[200px] flex items-center justify-center gap-2">
                 <div className="line flex-grow h-[2px] bg-[#6A7AA4]" />
                 <HeartPulse className="w-12 h-12 text-[#1A2954]" />
                 <div className="line flex-grow h-[2px] bg-[#6A7AA4]" />

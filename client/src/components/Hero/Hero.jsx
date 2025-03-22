@@ -10,7 +10,7 @@ export default function Hero() {
                     <div className="flex flex-col gap-6 md:gap-8 lg:gap-12">
                         <h1
                             className="font-nyght text-[2.5rem] md:text-5xl lg:text-[3.5rem] 
-                            text-[#1A2954] tracking-wide leading-none"
+                            text-[#1A2954] leading-none"
                         >
                             Your Trusted Partner in Pet Health&nbsp;
                             <span className="hidden md:inline">
