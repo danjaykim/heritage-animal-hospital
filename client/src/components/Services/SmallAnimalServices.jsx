@@ -1,4 +1,4 @@
-import dogIcon from '../../assets/images/icons/dog.svg'
+import { smallAnimalServices } from './SmallAnimalServicesData'
 import Bone from '../../assets/images/svg/bone.svg?react'
 
 export default function SmallAnimalServices() {
@@ -12,37 +12,39 @@ export default function SmallAnimalServices() {
             <h2 className="font-nyght font-medium text-3xl md:text-4xl tracking-wider">
                 Small Animal
             </h2>
-            <p className="font-light mt-10 mb-12 md:text-center md:w-[75%] lg:w-1/2">
+            <p className="font-light mt-10 mb-24 md:text-center md:w-[75%] lg:w-1/2">
                 We offer expert care tailored to the needs of small animals. Our
                 services include wellness exams, vaccinations, diagnostics,
                 surgical procedures, and emergency care, all provided with a
                 gentle and caring approach. We are committed to keeping your pet
                 healthy and thriving.
             </p>
-            <div className="relative grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <div
-                    className="flex flex-col items-center justify-center 
-                    gap-3 md:gap-6 px-4 pt-24 pb-10 border-[1px] border-[#D1D9E6]
-                    bg-[#FAFCFE] rounded-md"
-                >
-                    <div
-                        className="absolute -top-10 rounded-full p-4 
-                        border-[1px] border-[#D1D9E6] bg-[#F5F3EF]"
-                    >
-                        <img
-                            src={dogIcon}
-                            alt="Dog Icon"
-                            className="w-[75px]"
-                        />
-                    </div>
-                    <p className="font-nyght font-semibold text-xl text-center">
-                        Wellness and Preventive Care
-                    </p>
-                    <p className="text-center">
-                        Thorough wellness exams and personalized preventive care
-                        plans to support your pet&apos;s long-term health.
-                    </p>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-20">
+                {smallAnimalServices.map((service, index) => {
+                    return (
+                        <div
+                            key={index}
+                            className="relative flex flex-col items-center justify-center 
+                            gap-3 md:gap-6 px-4 pt-24 pb-10 border-[1px] border-[#D1D9E6]
+                            bg-[#FAFCFE] rounded-md"
+                        >
+                            <div
+                                className="absolute -top-10 rounded-full p-4 
+                                border-[1px] border-[#D1D9E6] bg-[#F5F3EF]"
+                            >
+                                <img
+                                    src={service.icon}
+                                    alt=""
+                                    className="w-[75px]"
+                                />
+                            </div>
+                            <p className="font-nyght font-medium text-xl text-center">
+                                {service.title}
+                            </p>
+                            <p className="text-center">{service.description}</p>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )
