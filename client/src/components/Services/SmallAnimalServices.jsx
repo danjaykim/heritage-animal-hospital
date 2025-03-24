@@ -41,7 +41,9 @@ export default function SmallAnimalServices() {
                             <p className="font-nyght font-medium text-xl text-center">
                                 {service.title}
                             </p>
-                            <p className="text-center">{service.description}</p>
+                            <p className="text-center font-light">
+                                {service.description}
+                            </p>
                         </div>
                     )
                 })}
