@@ -25,7 +25,7 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            <div className="containers my-10 md:my-16 lg:my-20 text-[#1A2954] border-4">
+            <div className="containers my-10 md:my-16 lg:my-20 text-[#1A2954]">
                 <SmallAnimalServices />
             </div>
         </section>
