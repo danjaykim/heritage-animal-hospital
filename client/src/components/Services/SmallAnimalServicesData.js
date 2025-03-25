@@ -1,11 +1,11 @@
-import dogIcon from '../../assets/images/icons/dog.svg'
-import dogCone from '../../assets/images/icons/dog-cone3.svg'
-import vaccine from '../../assets/images/icons/vaccine.svg'
-import toothBrush from '../../assets/images/icons/toothbrush.svg'
-import medShield from '../../assets/images/icons/med-shield.svg'
-import bugOff from '../../assets/images/icons/bug-off.svg'
-import petChecklist from '../../assets/images/icons/pet-checklist.svg'
-import petCollar from '../../assets/images/icons/pet-collar.svg'
+import dogIcon from '../../assets/images/icons/sa/dog.svg'
+import dogCone from '../../assets/images/icons/sa/dog-cone3.svg'
+import vaccine from '../../assets/images/icons/sa/vaccine.svg'
+import toothBrush from '../../assets/images/icons/sa/toothbrush.svg'
+import medShield from '../../assets/images/icons/sa/med-shield.svg'
+import bugOff from '../../assets/images/icons/sa/bug-off.svg'
+import petChecklist from '../../assets/images/icons/sa/pet-checklist.svg'
+import petCollar from '../../assets/images/icons/sa/pet-collar.svg'
 
 export const smallAnimalServices = [
     {
