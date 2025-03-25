@@ -17,4 +17,22 @@ export const largeAnimalServices = [
         description:
             'Preventative dental services to promote healthy teeth, gums, and overall well-being for your horse.',
     },
+    {
+        title: 'Lameness Evaluation',
+        description: `Assessments to diagnose and treat any mobility issues, ensuring your animal's comfort and performance.`,
+    },
+    {
+        title: 'Diagnostic Testing',
+        description: `Advanced bloodwork, ultrasound, radiographs, and more to accurately diagnose and treat conditions`,
+    },
+    {
+        title: 'Emergency Care',
+        description:
+            'Immediate attention for critical conditions such as colic, lacerations, and other urgent health issues.',
+    },
+    {
+        title: 'Castration',
+        description:
+            'Safe and professional castration services to prevent breeding and improve behavior',
+    },
 ]
