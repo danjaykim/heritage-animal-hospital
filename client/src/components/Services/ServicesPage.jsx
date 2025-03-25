@@ -1,5 +1,6 @@
 import wagonPups from '../../assets/images/wagon-pups.webp'
 import SmallAnimalServices from './SmallAnimalServices'
+import LargeAnimalServices from './LargeAnimalServices'
 
 export default function About() {
     return (
@@ -27,6 +28,7 @@ export default function About() {
             </div>
             <div className="containers my-10 md:my-16 lg:my-20 text-[#1A2954]">
                 <SmallAnimalServices />
+                <LargeAnimalServices />
             </div>
         </section>
     )
