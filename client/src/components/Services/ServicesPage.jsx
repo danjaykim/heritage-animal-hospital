@@ -16,9 +16,9 @@ export default function About() {
                             className="px-3 pt-[.45rem] pb-[1.15rem] 
                             md:px-5 md:pt-[.85rem] md:pb-[1.5rem] 
                             lg:px-8 lg:pt-3 lg:pb-[2rem]             
-                            font-nyght font-bold tracking-wider text-[#1A2954]
-                            text-3xl md:text-[2.5rem] lg:text-5xl
-                            bg-white rounded-t-2xl"
+                            font-nyght font-bold tracking-wider 
+                            text-[#1A2954] text-3xl md:text-[2.5rem] 
+                            lg:text-5xl bg-white rounded-t-2xl"
                         >
                             services
                         </h1>
