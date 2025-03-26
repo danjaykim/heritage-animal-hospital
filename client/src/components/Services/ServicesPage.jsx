@@ -26,7 +26,11 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            <div className="containers my-10 md:my-16 lg:my-20 text-[#1A2954]">
+            <div
+                className="containers flex flex-col 
+                gap-24 md:gap-32 lg:gap-40 my-10 md:my-16 
+                lg:my-20 text-[#1A2954]"
+            >
                 <SmallAnimalServices />
                 <LargeAnimalServices />
             </div>
