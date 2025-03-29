@@ -11,7 +11,7 @@ export default function ServiceSection({
                 {secIcon}
                 <div className="line flex-grow h-[2px] bg-[#6A7AA4]" />
             </div>
-            <h2 className="font-nyght font-medium text-3xl md:text-4xl tracking-wider">
+            <h2 className="font-nyght text-3xl md:text-6xl tracking-wider">
                 {title}
             </h2>
             <p className="font-light mt-10 mb-24 md:text-center md:w-[75%] lg:w-1/2">

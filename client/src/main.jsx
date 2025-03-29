@@ -5,6 +5,7 @@ import App from './App.jsx'
 import MainContent from './components/MainContent.jsx'
 import About from './components/About/About.jsx'
 import ServicesPage from './components/Services/ServicesPage.jsx'
+import Faq from './components/Resources/Faq.jsx'
 
 import './assets/fonts/fonts.css'
 import './index.css'
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
             {
                 element: <ServicesPage />,
                 path: '/services',
+            },
+            {
+                element: <Faq />,
+                path: '/resources/faq',
             },
         ],
     },

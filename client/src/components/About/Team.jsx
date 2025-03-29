@@ -14,12 +14,12 @@ const Team = forwardRef((props, ref) => {
                 <HeartPulse className="w-12 h-12 text-[#1A2954]" />
                 <div className="line flex-grow h-[2px] bg-[#6A7AA4]" />
             </div>
-            <h2 className="font-nyght font-medium text-xl md:text-2xl tracking-wider">
-                Our
+            <h2 className="font-nyght text-xl md:text-2xl lg:text-6xl">
+                Our Team
             </h2>
-            <h2 className="font-nyght font-medium text-3xl md:text-4xl tracking-wider -mt-3">
+            {/* <h2 className="font-nyght font-medium text-3xl md:text-4xl tracking-wider -mt-3">
                 Team
-            </h2>
+            </h2> */}
             <p className="font-light mt-10 mb-12 md:text-center md:w-[75%] lg:w-1/2">
                 Our doctors are dedicated to providing the highest level of care
                 for your pets. Passionate for animal health, they work together
