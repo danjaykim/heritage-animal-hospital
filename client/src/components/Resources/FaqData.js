@@ -8,7 +8,7 @@ export const faqData = [
             },
             {
                 question: 'Where is Heritage Animal Hospital located?',
-                answer: 'We are located at 1591 W. Bowen, Goshen AR 72703. You can find directions here: [ ].',
+                answer: 'We are located at [] AR. You can find directions here: [ ].',
             },
             {
                 question:
