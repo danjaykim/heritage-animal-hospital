@@ -25,7 +25,7 @@ export const faqData = [
             },
             {
                 question: 'Do you offer emergency services?',
-                answer: 'Yes, we do. If your pet needs urgent care, please reach out to us at 123-123-1234',
+                answer: 'Yes, we do. If your pet needs urgent care, please reach out to us at 123-123-1234.',
             },
         ],
     },
@@ -66,12 +66,12 @@ export const faqData = [
             {
                 question: 'How do I schedule an appointment?',
                 answer: `You can schedule an appointment by calling us at
-                    (123)123-1234 or booking online here: [ ]`,
+                    (123)123-1234 or booking online here: [ ].`,
             },
             {
                 question: 'What is your cancellation policy?',
                 answer: `We kindly ask that you provide at least [ ] notice
-                if you need to reschedule or cancel your appointment`,
+                if you need to reschedule or cancel your appointment.`,
             },
             {
                 question: `What should I bring for my pet's first visit?`,

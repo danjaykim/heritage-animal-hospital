@@ -46,11 +46,11 @@ export const faqDropdown = {
     open: {
         y: 0,
         opacity: 1,
-        height: 'auto',
+        paddingTop: '1.5rem',
     },
     close: {
-        y: 5,
+        y: -5,
         opacity: 0,
-        height: 0,
+        paddingTop: 0,
     },
 }

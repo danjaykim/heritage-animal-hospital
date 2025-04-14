@@ -23,40 +23,43 @@ export default function Faq() {
                             <h2>{category.category}</h2>
                             {category.faqs.map((faq, faqIndex) => {
                                 return (
-                                    <Disclosure
-                                        as="div"
+                                    <motion.div
                                         key={faqIndex}
+                                        layout
                                         className="border-4 rounded-md w-full text-left p-4"
                                     >
-                                        {({ open }) => (
-                                            <>
-                                                <DisclosureButton className="flex justify-between w-full">
-                                                    {faq.question}
-                                                </DisclosureButton>
-                                                <AnimatePresence>
-                                                    {open && (
-                                                        <DisclosurePanel
-                                                            static
-                                                            as={motion.div}
-                                                            initial="close"
-                                                            animate="open"
-                                                            exit="close"
-                                                            variants={
-                                                                faqDropdown
-                                                            }
-                                                            transition={{
-                                                                duration: 0.3,
-                                                                ease: 'easeInOut',
-                                                            }}
-                                                            className="overflow-hidden"
-                                                        >
-                                                            {faq.answer}
-                                                        </DisclosurePanel>
-                                                    )}
-                                                </AnimatePresence>
-                                            </>
-                                        )}
-                                    </Disclosure>
+                                        <Disclosure>
+                                            {({ open }) => (
+                                                <>
+                                                    <DisclosureButton className="flex justify-between w-full">
+                                                        {faq.question}
+                                                    </DisclosureButton>
+                                                    <AnimatePresence mode="wait">
+                                                        {open && (
+                                                            <motion.div
+                                                                layout
+                                                                initial="close"
+                                                                animate="open"
+                                                                exit="close"
+                                                                variants={
+                                                                    faqDropdown
+                                                                }
+                                                                transition={{
+                                                                    duration: 0.2,
+                                                                    ease: 'easeInOut',
+                                                                }}
+                                                                className="overflow-hidden"
+                                                            >
+                                                                <DisclosurePanel>
+                                                                    {faq.answer}
+                                                                </DisclosurePanel>
+                                                            </motion.div>
+                                                        )}
+                                                    </AnimatePresence>
+                                                </>
+                                            )}
+                                        </Disclosure>
+                                    </motion.div>
                                 )
                             })}
                         </div>
