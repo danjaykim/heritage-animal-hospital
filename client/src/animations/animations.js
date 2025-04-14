@@ -41,3 +41,16 @@ export const rotatingServicesVariants = {
     animate: { opacity: 1, y: 0 },
     exit: { opacity: 0, y: -20 },
 }
+
+export const faqDropdown = {
+    open: {
+        y: 0,
+        opacity: 1,
+        height: 'auto',
+    },
+    close: {
+        y: 5,
+        opacity: 0,
+        height: 0,
+    },
+}

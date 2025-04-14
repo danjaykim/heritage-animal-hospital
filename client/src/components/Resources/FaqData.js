@@ -1,6 +1,6 @@
 export const faqData = [
     {
-        category: 'general',
+        category: 'General Questions',
         faqs: [
             {
                 question: `What is your hospital's your hours of operation?`,
@@ -126,8 +126,8 @@ export const faqData = [
                 pet ingests any of these, please contact us immediately.`,
             },
             {
-                question: `How do I help my senior pet stay active and happy?',
-                answer: 'Senior pets may experience arthritis, decreased energy,
+                question: 'How do I help my senior pet stay active and happy?',
+                answer: `Senior pets may experience arthritis, decreased energy,
                 and changes in appetite. Providing a healthy diet, orthopedic bed,
                 and regular check-ups can help keep them happy and mobile.`,
             },

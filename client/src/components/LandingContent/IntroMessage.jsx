@@ -3,7 +3,7 @@ export default function IntroMessage() {
         <section className="containers flex flex-col items-center gap-5 text-[#1A2954]">
             <h2
                 className="font-nyght font-medium tracking-wide self-start md:self-center 
-                text-[2.1rem] md:text-[2.7rem] lg:text-[3rem] 
+                text-[2.1rem] md:text-[2.7rem] lg:text-[2.7rem] 
                 leading-none md:leading-[2.5rem] lg:leading-[3rem]"
             >
                 Compassionate care
